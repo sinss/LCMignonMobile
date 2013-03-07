@@ -1,0 +1,111 @@
+//
+// Prefix header for all source files of the 'pccuPrject' target in the 'pccuPrject' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define sylinCardNo @"sylinCardNo.key"
+#define sylinCardName @"sylinCardName.key"
+#define sylinCardExpireDate @"syilnCardExpireDate.key"
+#define sylinCardType @"sylinCardType.key"
+
+#define facebookAppID @"227279900642881"
+#define csvConfigFile @"csvConfigFile"
+#define csvDayFile @"csvDayFile"
+#define csvStoreFile @"csvStoreFile"
+#define csvTopicFile @"csvTopicFile"
+#define csvBrandFile @"csvBrandFile"
+#define csvMoreFile @"csvMoreFile"
+#define csvCardAuthFile @"csvCardAuthFile"
+#define csvAdDataFile @"csvAdDataFile"
+#define csvActivityFile @"csvActivityFile"
+#define csvStageFile @"csvStageFile"
+#define csvDrawFile @"csvDrawFile"
+#define csvMovieFile @"csvMovieFile"
+#define csvCarnivalFile @"csvCarnivalFile"
+#define csvPccuNewsFile1 @"csvPccuNewsFile1"
+#define csvPccuNewsFile2 @"csvPccuNewsFile2"
+#define csvPccuNewsFile3 @"csvPccuNewsFile3"
+#define csvPccuNewsFile4 @"csvPccuNewsFile4"
+#define csvPccuNewsFile5 @"csvPccuNewsFile5"
+#define csvPccuNewsFile6 @"csvPccuNewsFile6"
+#define csvPccuNewsFile7 @"csvPccuMedia6"
+#define csvPccuMediaFile1 @"csvPccuMediaFile1"
+#define csvPccuMediaFile2 @"csvPccuMediaFile2"
+#define csvPccuMediaFile3 @"csvPccuMediaFile3"
+#define csvPccuMediaFile4 @"csvPccuMediaFile4"
+#define csvPccuMediaFile5 @"csvPccuMediaFile5"
+#define csvPccuNewsCardsFile @"csvPccuNewsCardsFile"
+#define mainPageItemName @"回主頁"
+
+//上方NavigationBar上的按鈕背景顏色
+#define navigationBarBackground [UIImage imageNamed:@"more_banner2.png"]
+#define navigationBarColor [UIColor colorWithRed:50.0f/255.0f green:185.0f/255.0f blue:252.0f/255.0f alpha:1]
+#define navigationBarButtonColor [UIColor colorWithRed:159.0f/255.0f green:83.0f/255.0f blue:92.0f/255.0f alpha:1]
+//下方Toolbar上的按鈕背景顏
+#define toolBarColor [UIColor colorWithRed:0.0f/255.0f green:156.0f/255.0f blue:235.0f/255.0f alpha:1]
+#define toolBarButtonColor [UIColor colorWithRed:50.0f/255.0f green:185.0f/255.0f blue:252.0f/255.0f alpha:1]
+#define toolbarBackground [UIImage imageNamed:@"toolbar_bg.png"]
+
+#define oddCellBackgroundColor [UIColor colorWithRed:242.0f/255.0f green:238.0f/255.0f blue:235.0f/255.0f alpha:0.5]
+#define evenCellBackgroundColor [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.5]
+
+#define loadingImageName @"loading.png"
+#define noImageName @"noImage.jpeg"
+#define tableView_bg @"background_367.png"
+#define sylinCoin_bg @"sylinCoin_bg.png"
+
+#define tab1Image @"Item01.png"
+#define tab2Image @"Item02.png"
+#define tab3Image @"Item03.png"
+#define tab4Image @"Item04.png"
+#define tab5Image @"Item05.png"
+#define cover1Image @"cover01.png"
+#define cover2Image @"cover02.png"
+#define cover3Image @"cover03.png"
+#define cover4Image @"cover04.png"
+#define cover5Image @"cover05.png"
+
+#define klineWordUnit 21
+#define ktextViewHeightUnit 22
+#define kdefaultCellHeight 43
+#define kdefaultTextViewHeight 28
+
+
+enum
+{
+    carnivalDetailTypeActivity = 0,
+    carnivalDetailTypeStage = 1,
+    carnivalDetailTypeDraw = 2,
+    carnivalDetailTypeMovie = 3,
+    carnivalDetailTypeCarnival = 4,
+};
+typedef NSInteger carnivalDetailType;
+
+enum pccuMenuItem {
+    pccuMenuItemNews1 = 0,
+    pccuMenuItemNews2 = 1,
+    pccuMenuItemNews3 = 2,
+    pccuMenuItemNews4 = 3,
+    pccuMenuItemNews5 = 4,
+    pccuMenuItemNews6 = 5,
+    pccuMenuItemNews7 = 6,
+    pccuMenuItemMedia1 = 7,
+    pccuMenuItemMedia2 = 8,
+    pccuMenuItemMedia3 = 9,
+    pccuMenuItemAppeal = 10,
+    pccuMenuItemCard = 11,
+    pccuMenuItemMore = 12,
+};
+typedef NSUInteger pccuMenuItem;

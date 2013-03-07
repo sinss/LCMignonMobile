@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MSNavigationPaneViewController.h"
+#import "MSMasterViewController.h"
+
 
 @implementation AppDelegate
 
@@ -16,6 +19,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_navigationPaneViewController release];
     [super dealloc];
 }
 
@@ -29,6 +33,25 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[UINavigationBar appearance] setTintColor:navigationBarColor];
+    //[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:navigationBarColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      //[UIColor colorWithRed:0.0f/255.0f green:50.0f/255.0f blue:201.0f/255.0f alpha:1],
+      [UIColor whiteColor],
+      UITextAttributeTextColor,
+      [UIColor clearColor],
+      UITextAttributeTextShadowColor,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+      UITextAttributeTextShadowOffset,
+      [UIFont fontWithName:@"Helvetica-Bold" size:15.0],
+      UITextAttributeFont,
+      nil]];
+
+    [[UIToolbar appearance] setTintColor:navigationBarColor];
+    launchView = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
+    [self.window addSubview:launchView.view];
     return YES;
 }
 
@@ -52,6 +75,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self GetLocation];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -155,4 +179,95 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+-(void) targetMethod
+{
+    [NSTimer scheduledTimerWithTimeInterval:2
+                                     target:self
+                                   selector:@selector(tabBarMethod:)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+-(void)tabBarMethod:(NSTimer*)thetimer
+{
+    [launchView.view removeFromSuperview];
+    [launchView release];
+    
+    self.navigationPaneViewController = [[MSNavigationPaneViewController alloc] init];
+    
+    MSMasterViewController *masterViewController = [[MSMasterViewController alloc] init];
+    masterViewController.navigationPaneViewController = self.navigationPaneViewController;
+    
+    self.navigationPaneViewController.masterViewController = masterViewController;
+    
+    [masterViewController transitionToViewController:MignonViewControllerTypeNews];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.navigationPaneViewController;
+    
+    [self.window makeKeyAndVisible];
+}
+
+#pragma mark 取得位址
+- (void)GetLocation
+{
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = 1.0f;
+    [locationManager startUpdatingLocation];
+    locationManager.headingFilter = kCLHeadingFilterNone;
+    [locationManager startUpdatingHeading];
+    
+    if ((int)locationManager.location.coordinate.latitude > 0)
+    {
+        if ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone Simulator"]||
+            [[[UIDevice currentDevice] model] isEqualToString:@"iPad Simulator"])
+        {
+            currentLocation =[[CLLocation alloc] initWithLatitude:25.085f longitude:121.524f];
+        }
+        else
+        {
+            currentLocation = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude] ;
+        }
+    }
+    else
+    {
+        currentLocation =[[CLLocation alloc] initWithLatitude:25.085f longitude:121.524f];
+    }
+    
+    NSURL *urlString = [NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",currentLocation.coordinate.latitude, currentLocation.coordinate.longitude]];
+    NSData *locationData = [[[NSData alloc] initWithContentsOfURL:urlString] autorelease] ;
+    
+    NSError *error;
+    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:locationData options:NSJSONReadingMutableContainers error:&error];
+    
+    //如果GPS有查到相對位置
+	if (results)
+    {
+        if ([[results valueForKey:@"status"] isEqualToString:@"OK"])
+        {
+            NSString *addrA = [[[[[results valueForKey:@"results"] objectAtIndex:0] valueForKey:@"formatted_address"] stringByReplacingOccurrencesOfString:@"台灣" withString:@""]  substringFromIndex:3]  ;
+            
+            NSString *lat = [[[[[results valueForKey:@"results"] objectAtIndex:0] valueForKey:@"geometry"]  valueForKey:@"location"] valueForKey:@"lat"];
+            
+            NSString *lng = [[[[[results valueForKey:@"results"] objectAtIndex:0] valueForKey:@"geometry"]  valueForKey:@"location"] valueForKey:@"lng"];
+            //            NSString *addrC = (addrB) ? [NSString stringWithFormat:@"%@號",addrB]:addrB;
+            //            [CurrAddr setString:@"%@",addrA];
+            
+            //            addrA = @"台北市士林區承德路四段186號";
+            [currentAddress setString:@""];
+            [currentAddress appendFormat:@"%@ 附近",addrA];
+            currLat = [lat doubleValue];
+            currLng = [lng doubleValue];
+            //            NSLog(@"%@",responseString);
+            
+            NSLog(@"lat=%f lng=%f Address=%@",currLat, currLng, currentAddress);
+            //            NSLog(@"lat=%f lng=%f",currLat, currLng);
+            currentLocation = [[CLLocation alloc] initWithLatitude:currLat longitude:currLng];
+         
+            [[appConfigRecord appConfigInstance] setCurrentLocation:currentLocation];
+            [[appConfigRecord appConfigInstance] setCurrentAddress:currentAddress];
+        }
+	}
+}
 @end
