@@ -116,12 +116,12 @@ const CGFloat MSNavigationPaneAnimationDurationSnapBack = 0.12;
 
 #pragma mark Pane State
 
-- (MSNavigationPaneState)paneState
+- (MSDraggableViewState)paneState
 {
     return _paneView.state;
 }
 
-- (void)setPaneState:(MSNavigationPaneState)paneState
+- (void)setPaneState:(MSDraggableViewState)paneState
 {
     [self setPaneState:paneState animated:NO];
 }
@@ -274,9 +274,9 @@ const CGFloat MSNavigationPaneAnimationDurationSnapBack = 0.12;
         };
         
         CGFloat duration = 0.0;
-        if (self.paneState == MSNavigationPaneStateOpen) {
+        if (self.paneState == MSDraggableViewStateOpen) {
             duration = MSNavigationPaneAnimationDurationOpenToSide;
-        } else if (self.paneState == MSNavigationPaneStateClosed) {
+        } else if (self.paneState == MSDraggableViewStateClosed) {
             duration = MSNavigationPaneAnimationDurationClosedToSide;
         }
         
@@ -290,7 +290,7 @@ const CGFloat MSNavigationPaneAnimationDurationSnapBack = 0.12;
     }
 }
 
-- (void)setPaneState:(MSNavigationPaneState)aPaneState animated:(BOOL)animated
+- (void)setPaneState:(MSDraggableViewState)aPaneState animated:(BOOL)animated
 {
     void(^animatePaneOpen)() = ^{
         CGRect paneViewFrame = _paneView.frame;
@@ -312,7 +312,7 @@ const CGFloat MSNavigationPaneAnimationDurationSnapBack = 0.12;
         _paneView.state = MSDraggableViewStateClosed;
     };
     
-    if (aPaneState == MSNavigationPaneStateClosed) {
+    if (aPaneState == MSDraggableViewStateClosed) {
         
         if (animated) {
             [UIView animateWithDuration:MSNavigationPaneAnimationDurationClosedToOpen
@@ -323,7 +323,7 @@ const CGFloat MSNavigationPaneAnimationDurationSnapBack = 0.12;
             animatePaneClosedCompletion(YES);
         }
         
-    } else if (aPaneState == MSNavigationPaneStateOpen) {
+    } else if (aPaneState == MSDraggableViewStateOpen) {
         
         if (animated) {
             [UIView animateWithDuration:MSNavigationPaneAnimationDurationOpenToClosed

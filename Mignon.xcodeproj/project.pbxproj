@@ -143,6 +143,7 @@
 		0FF0F3D916E8E98D002F5A65 /* noPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0F3D016E8E98D002F5A65 /* noPhoto.png */; };
 		0FF0F3DA16E8E98D002F5A65 /* sidebarbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */; };
 		0FF0F3DB16E8E98D002F5A65 /* sidebarcell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */; };
+		0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -314,15 +315,17 @@
 		0FF0F3C516E8E8A5002F5A65 /* MignonNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MignonNewsViewController.h; sourceTree = "<group>"; };
 		0FF0F3C616E8E8A6002F5A65 /* MignonNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonNewsViewController.m; sourceTree = "<group>"; };
 		0FF0F3C716E8E8A6002F5A65 /* MignonNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MignonNewsViewController.xib; sourceTree = "<group>"; };
-		0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_white.jpg; path = images/bg_white.jpg; sourceTree = "<group>"; };
-		0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bg_white@2x.jpg"; path = "images/bg_white@2x.jpg"; sourceTree = "<group>"; };
-		0FF0F3CC16E8E98D002F5A65 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = images/facebook.png; sourceTree = "<group>"; };
-		0FF0F3CD16E8E98D002F5A65 /* GPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPlus.png; path = images/GPlus.png; sourceTree = "<group>"; };
-		0FF0F3CE16E8E98D002F5A65 /* MSBarButtonIconNavigationPane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MSBarButtonIconNavigationPane.png; path = images/MSBarButtonIconNavigationPane.png; sourceTree = "<group>"; };
-		0FF0F3CF16E8E98D002F5A65 /* MSBarButtonIconNavigationPane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MSBarButtonIconNavigationPane@2x.png"; path = "images/MSBarButtonIconNavigationPane@2x.png"; sourceTree = "<group>"; };
-		0FF0F3D016E8E98D002F5A65 /* noPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noPhoto.png; path = images/noPhoto.png; sourceTree = "<group>"; };
-		0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sidebarbg@2x.png"; path = "images/sidebarbg@2x.png"; sourceTree = "<group>"; };
-		0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sidebarcell@2x.png"; path = "images/sidebarcell@2x.png"; sourceTree = "<group>"; };
+		0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_white.jpg; sourceTree = "<group>"; };
+		0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_white@2x.jpg"; sourceTree = "<group>"; };
+		0FF0F3CC16E8E98D002F5A65 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		0FF0F3CD16E8E98D002F5A65 /* GPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPlus.png; sourceTree = "<group>"; };
+		0FF0F3CE16E8E98D002F5A65 /* MSBarButtonIconNavigationPane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSBarButtonIconNavigationPane.png; sourceTree = "<group>"; };
+		0FF0F3CF16E8E98D002F5A65 /* MSBarButtonIconNavigationPane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBarButtonIconNavigationPane@2x.png"; sourceTree = "<group>"; };
+		0FF0F3D016E8E98D002F5A65 /* noPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noPhoto.png; sourceTree = "<group>"; };
+		0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebarbg@2x.png"; sourceTree = "<group>"; };
+		0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebarcell@2x.png"; sourceTree = "<group>"; };
+		0FF0F42C16E8F258002F5A65 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				0FF0F39616E8D671002F5A65 /* MSNavigationPaneViewController */,
+				0FF0F42B16E8F258002F5A65 /* HMSegmentedControl */,
 				0FF0F28F16E8D626002F5A65 /* MBProgress */,
 				0FF0F29916E8D626002F5A65 /* MyInfoPanel */,
 				0FF0F2A716E8D626002F5A65 /* ODRefreshControl */,
@@ -501,15 +505,6 @@
 		0FF0F2B016E8D626002F5A65 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */,
-				0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */,
-				0FF0F3CC16E8E98D002F5A65 /* facebook.png */,
-				0FF0F3CD16E8E98D002F5A65 /* GPlus.png */,
-				0FF0F3CE16E8E98D002F5A65 /* MSBarButtonIconNavigationPane.png */,
-				0FF0F3CF16E8E98D002F5A65 /* MSBarButtonIconNavigationPane@2x.png */,
-				0FF0F3D016E8E98D002F5A65 /* noPhoto.png */,
-				0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */,
-				0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */,
 				0FF0F2B116E8D626002F5A65 /* icon */,
 				0FF0F2B516E8D626002F5A65 /* images */,
 			);
@@ -529,6 +524,15 @@
 		0FF0F2B516E8D626002F5A65 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */,
+				0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */,
+				0FF0F3CC16E8E98D002F5A65 /* facebook.png */,
+				0FF0F3CD16E8E98D002F5A65 /* GPlus.png */,
+				0FF0F3CE16E8E98D002F5A65 /* MSBarButtonIconNavigationPane.png */,
+				0FF0F3CF16E8E98D002F5A65 /* MSBarButtonIconNavigationPane@2x.png */,
+				0FF0F3D016E8E98D002F5A65 /* noPhoto.png */,
+				0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */,
+				0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */,
 				0FF0F2B616E8D626002F5A65 /* blackArrow.png */,
 				0FF0F2B716E8D626002F5A65 /* blackArrow@2x.png */,
 				0FF0F2B816E8D626002F5A65 /* blueArrow.png */,
@@ -698,6 +702,15 @@
 				0FF0F39C16E8D671002F5A65 /* MSNavigationPaneViewController.m */,
 			);
 			path = MSNavigationPaneViewController;
+			sourceTree = "<group>";
+		};
+		0FF0F42B16E8F258002F5A65 /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				0FF0F42C16E8F258002F5A65 /* HMSegmentedControl.h */,
+				0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */,
+			);
+			path = HMSegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -884,6 +897,7 @@
 				0FF0F3B616E8D8DC002F5A65 /* MignonFacebookViewController.m in Sources */,
 				0FF0F3BB16E8D900002F5A65 /* MignonMoreViewController.m in Sources */,
 				0FF0F3C816E8E8A6002F5A65 /* MignonNewsViewController.m in Sources */,
+				0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

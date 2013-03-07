@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MignonNewsViewController : UIViewController
-
+{
+    IBOutlet UITableView *aTableView;
+}
 @end

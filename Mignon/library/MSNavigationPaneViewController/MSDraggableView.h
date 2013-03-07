@@ -26,11 +26,6 @@
 //  THE SOFTWARE.
 //
 
-typedef NS_ENUM(NSUInteger, MSDraggableViewState) {
-    MSDraggableViewStateOpen,
-    MSDraggableViewStateClosed,
-};
-
 @protocol MSDraggableImageViewDelegate;
 
 @interface MSDraggableView : UIView

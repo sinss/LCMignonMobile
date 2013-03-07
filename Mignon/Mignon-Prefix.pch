@@ -44,3 +44,8 @@ typedef NS_ENUM(NSUInteger, MignonViewControllerType) {
     MignonViewControllerTypeMore,
     MignonViewControllerTypeCount,
 };
+
+typedef NS_ENUM(NSUInteger, MSDraggableViewState) {
+    MSDraggableViewStateOpen,
+    MSDraggableViewStateClosed,
+};

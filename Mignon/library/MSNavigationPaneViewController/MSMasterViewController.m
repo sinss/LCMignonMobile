@@ -74,11 +74,11 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
             @(MignonViewControllerTypeMore) : MignonMoreViewController.class,
         };
         self.paneViewControllerTintColor = @{
-            @(MignonViewControllerTypeNews) : [UIColor colorWithRed:0.502 green:0.000 blue:0.000 alpha:1.000],
+            @(MignonViewControllerTypeNews) : [UIColor colorWithRed:230.f/255 green:71.f/255 blue:135.f/255 alpha:1.000],
             @(MignonViewControllerTypeProduct) : [UIColor colorWithRed:0.502 green:0.000 blue:0.000 alpha:1.000],
             @(MignonViewControllerTypeShopCart) : [UIColor colorWithRed:0.000 green:0.251 blue:0.502 alpha:1.000],
-            @(MignonViewControllerTypeFacebook) : [UIColor colorWithRed:0.251 green:0.502 blue:0.000 alpha:1.000],
-            @(MignonViewControllerTypeMore) : [UIColor colorWithRed:0 green:179/255.0 blue:134/255.0 alpha:1],
+            @(MignonViewControllerTypeFacebook) : [UIColor colorWithRed:0 green:179/255.0 blue:134/255.0 alpha:1],
+            @(MignonViewControllerTypeMore) : [UIColor colorWithRed:0.251 green:0.502 blue:0.000 alpha:1.000],
         };
     }
     return self;
@@ -129,7 +129,7 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
 
 - (void)navigationPaneBarButtonItemTapped:(id)sender;
 {
-    [self.navigationPaneViewController setPaneState:MSNavigationPaneStateOpen animated:YES];
+    [self.navigationPaneViewController setPaneState:MSDraggableViewStateOpen animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -150,7 +150,7 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"headerView_bg3.png"]];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shareHeader2.png"]];
     [imageview setFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0,
                                                                self.view.frame.size.width,

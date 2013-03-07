@@ -39,18 +39,13 @@ extern const CGFloat MSNavigationPaneAnimationDurationClosedToOpen;
 extern const CGFloat MSNavigationPaneAnimationDurationSnap;
 extern const CGFloat MSNavigationPaneAnimationDurationSnapBack;
 
-typedef NS_ENUM(NSUInteger, MSNavigationPaneState) {
-    MSNavigationPaneStateOpen,
-    MSNavigationPaneStateClosed,
-};
-
 @protocol MSNavigationPaneViewControllerDelegate;
 
 @interface MSNavigationPaneViewController : UIViewController
 
 @property (nonatomic, assign) id<MSNavigationPaneViewControllerDelegate> delegate;
 
-@property (nonatomic, assign) MSNavigationPaneState paneState;
+@property (nonatomic, assign) MSDraggableViewState paneState;
 @property (nonatomic, strong) UIViewController *paneViewController;
 @property (nonatomic, strong) UIViewController *masterViewController;
 
@@ -58,7 +53,7 @@ typedef NS_ENUM(NSUInteger, MSNavigationPaneState) {
 @property (nonatomic, readonly) MSDraggableView *paneView;
 
 - (void)setPaneViewController:(UIViewController *)paneViewController animated:(BOOL)animated completion:(void (^)(void))completion;
-- (void)setPaneState:(MSNavigationPaneState)paneState animated:(BOOL)animated;
+- (void)setPaneState:(MSDraggableViewState)paneState animated:(BOOL)animated;
 
 @end
 
