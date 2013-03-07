@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9216E8D131002F5A65 /* UIKit.framework */; };
+		0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9416E8D131002F5A65 /* Foundation.framework */; };
+		0FF0EE9716E8D131002F5A65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */; };
+		0FF0EE9916E8D131002F5A65 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9816E8D131002F5A65 /* CoreData.framework */; };
+		0FF0EE9F16E8D131002F5A65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0EE9D16E8D131002F5A65 /* InfoPlist.strings */; };
+		0FF0EEA116E8D131002F5A65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0EEA016E8D131002F5A65 /* main.m */; };
+		0FF0EEA516E8D131002F5A65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0EEA416E8D131002F5A65 /* AppDelegate.m */; };
+		0FF0EEA716E8D131002F5A65 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0EEA616E8D131002F5A65 /* Default.png */; };
+		0FF0EEA916E8D131002F5A65 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0EEA816E8D131002F5A65 /* Default@2x.png */; };
+		0FF0EEAB16E8D131002F5A65 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0EEAA16E8D131002F5A65 /* Default-568h@2x.png */; };
+		0FF0EEAE16E8D131002F5A65 /* Mignon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0EEAC16E8D131002F5A65 /* Mignon.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FF0EE8F16E8D131002F5A65 /* Mignon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mignon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF0EE9216E8D131002F5A65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0FF0EE9416E8D131002F5A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0FF0EE9816E8D131002F5A65 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0FF0EE9C16E8D131002F5A65 /* Mignon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mignon-Info.plist"; sourceTree = "<group>"; };
+		0FF0EE9E16E8D131002F5A65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0FF0EEA016E8D131002F5A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0FF0EEA216E8D131002F5A65 /* Mignon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mignon-Prefix.pch"; sourceTree = "<group>"; };
+		0FF0EEA316E8D131002F5A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0FF0EEA416E8D131002F5A65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0FF0EEA616E8D131002F5A65 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0FF0EEA816E8D131002F5A65 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0FF0EEAA16E8D131002F5A65 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0FF0EEAD16E8D131002F5A65 /* Mignon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mignon.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FF0EE8C16E8D131002F5A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */,
+				0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */,
+				0FF0EE9716E8D131002F5A65 /* CoreGraphics.framework in Frameworks */,
+				0FF0EE9916E8D131002F5A65 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FF0EE8616E8D131002F5A65 = {
+			isa = PBXGroup;
+			children = (
+				0FF0EE9A16E8D131002F5A65 /* Mignon */,
+				0FF0EE9116E8D131002F5A65 /* Frameworks */,
+				0FF0EE9016E8D131002F5A65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FF0EE9016E8D131002F5A65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FF0EE8F16E8D131002F5A65 /* Mignon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FF0EE9116E8D131002F5A65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FF0EE9216E8D131002F5A65 /* UIKit.framework */,
+				0FF0EE9416E8D131002F5A65 /* Foundation.framework */,
+				0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */,
+				0FF0EE9816E8D131002F5A65 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0FF0EE9A16E8D131002F5A65 /* Mignon */ = {
+			isa = PBXGroup;
+			children = (
+				0FF0EEA316E8D131002F5A65 /* AppDelegate.h */,
+				0FF0EEA416E8D131002F5A65 /* AppDelegate.m */,
+				0FF0EEAC16E8D131002F5A65 /* Mignon.xcdatamodeld */,
+				0FF0EE9B16E8D131002F5A65 /* Supporting Files */,
+			);
+			path = Mignon;
+			sourceTree = "<group>";
+		};
+		0FF0EE9B16E8D131002F5A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FF0EE9C16E8D131002F5A65 /* Mignon-Info.plist */,
+				0FF0EE9D16E8D131002F5A65 /* InfoPlist.strings */,
+				0FF0EEA016E8D131002F5A65 /* main.m */,
+				0FF0EEA216E8D131002F5A65 /* Mignon-Prefix.pch */,
+				0FF0EEA616E8D131002F5A65 /* Default.png */,
+				0FF0EEA816E8D131002F5A65 /* Default@2x.png */,
+				0FF0EEAA16E8D131002F5A65 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FF0EE8E16E8D131002F5A65 /* Mignon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF0EEB116E8D131002F5A65 /* Build configuration list for PBXNativeTarget "Mignon" */;
+			buildPhases = (
+				0FF0EE8B16E8D131002F5A65 /* Sources */,
+				0FF0EE8C16E8D131002F5A65 /* Frameworks */,
+				0FF0EE8D16E8D131002F5A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mignon;
+			productName = Mignon;
+			productReference = 0FF0EE8F16E8D131002F5A65 /* Mignon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FF0EE8716E8D131002F5A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = MountainStar;
+			};
+			buildConfigurationList = 0FF0EE8A16E8D131002F5A65 /* Build configuration list for PBXProject "Mignon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0FF0EE8616E8D131002F5A65;
+			productRefGroup = 0FF0EE9016E8D131002F5A65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FF0EE8E16E8D131002F5A65 /* Mignon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FF0EE8D16E8D131002F5A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF0EE9F16E8D131002F5A65 /* InfoPlist.strings in Resources */,
+				0FF0EEA716E8D131002F5A65 /* Default.png in Resources */,
+				0FF0EEA916E8D131002F5A65 /* Default@2x.png in Resources */,
+				0FF0EEAB16E8D131002F5A65 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FF0EE8B16E8D131002F5A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF0EEA116E8D131002F5A65 /* main.m in Sources */,
+				0FF0EEA516E8D131002F5A65 /* AppDelegate.m in Sources */,
+				0FF0EEAE16E8D131002F5A65 /* Mignon.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0FF0EE9D16E8D131002F5A65 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FF0EE9E16E8D131002F5A65 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FF0EEAF16E8D131002F5A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0FF0EEB016E8D131002F5A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FF0EEB216E8D131002F5A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mignon/Mignon-Prefix.pch";
+				INFOPLIST_FILE = "Mignon/Mignon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0FF0EEB316E8D131002F5A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mignon/Mignon-Prefix.pch";
+				INFOPLIST_FILE = "Mignon/Mignon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FF0EE8A16E8D131002F5A65 /* Build configuration list for PBXProject "Mignon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF0EEAF16E8D131002F5A65 /* Debug */,
+				0FF0EEB016E8D131002F5A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF0EEB116E8D131002F5A65 /* Build configuration list for PBXNativeTarget "Mignon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF0EEB216E8D131002F5A65 /* Debug */,
+				0FF0EEB316E8D131002F5A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FF0EEAC16E8D131002F5A65 /* Mignon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FF0EEAD16E8D131002F5A65 /* Mignon.xcdatamodel */,
+			);
+			currentVersion = 0FF0EEAD16E8D131002F5A65 /* Mignon.xcdatamodel */;
+			path = Mignon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0FF0EE8716E8D131002F5A65 /* Project object */;
+}
