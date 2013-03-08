@@ -144,6 +144,8 @@
 		0FF0F3DA16E8E98D002F5A65 /* sidebarbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0F3D116E8E98D002F5A65 /* sidebarbg@2x.png */; };
 		0FF0F3DB16E8E98D002F5A65 /* sidebarcell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */; };
 		0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */; };
+		32341CD216E9E09C006A877C /* newsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341CD116E9E09C006A877C /* newsInfo.m */; };
+		32341CD516E9ED6D006A877C /* productInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341CD416E9ED6D006A877C /* productInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -326,6 +328,10 @@
 		0FF0F3D216E8E98D002F5A65 /* sidebarcell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebarcell@2x.png"; sourceTree = "<group>"; };
 		0FF0F42C16E8F258002F5A65 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		32341CD016E9E09C006A877C /* newsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsInfo.h; sourceTree = "<group>"; };
+		32341CD116E9E09C006A877C /* newsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsInfo.m; sourceTree = "<group>"; };
+		32341CD316E9ED6D006A877C /* productInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productInfo.h; sourceTree = "<group>"; };
+		32341CD416E9ED6D006A877C /* productInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -597,6 +603,10 @@
 				0FF0F2EA16E8D626002F5A65 /* appDateRecord.m */,
 				0FF0F2ED16E8D626002F5A65 /* DayConfiguration.h */,
 				0FF0F2EE16E8D626002F5A65 /* DayConfiguration.m */,
+				32341CD016E9E09C006A877C /* newsInfo.h */,
+				32341CD116E9E09C006A877C /* newsInfo.m */,
+				32341CD316E9ED6D006A877C /* productInfo.h */,
+				32341CD416E9ED6D006A877C /* productInfo.m */,
 			);
 			path = "share component";
 			sourceTree = "<group>";
@@ -898,6 +908,8 @@
 				0FF0F3BB16E8D900002F5A65 /* MignonMoreViewController.m in Sources */,
 				0FF0F3C816E8E8A6002F5A65 /* MignonNewsViewController.m in Sources */,
 				0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */,
+				32341CD216E9E09C006A877C /* newsInfo.m in Sources */,
+				32341CD516E9ED6D006A877C /* productInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,6 +1022,7 @@
 				0FF0EEB316E8D131002F5A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

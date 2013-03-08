@@ -37,11 +37,6 @@
     [launchImageView release], launchImageView = nil;
     [downloadProcess release], downloadProcess = nil;
     [downloadProcess2 release], downloadProcess2 = nil;
-    [downloadProcess3 release], downloadProcess3 = nil;
-    [downloadProcess4 release], downloadProcess4 = nil;
-    [downloadProcess5 release], downloadProcess5 = nil;
-    [downloadProcess6 release], downloadProcess6 = nil;
-    [downloadProcess7 release], downloadProcess7 = nil;
     [super dealloc];
 }
 
@@ -106,7 +101,7 @@
     if(HUD != nil)
     {
         NSLog(@"Launch View(finish)");
-        [HUD hide:YES afterDelay:1];
+        [HUD hide:YES afterDelay:0];
 		[HUD removeFromSuperview];
 	}
     [super viewDidUnload];
@@ -134,7 +129,7 @@
 }
 - (void)downloadDelegate:(downloadStoreDelegate *)obj didFinishDownloadWithData:(NSArray *)array
 {
-    /*
+    
     if (obj.csvLoadtype == csvLoadtypeConfig)
     {
         [downloadProcess release], downloadProcess = nil;
@@ -147,15 +142,13 @@
     {
         [downloadProcess2 release], downloadProcess2 = nil;
     }
-     */
 }
 
 - (void)reloadAppConfig
 {
     [downloadProcess startGetStoreWithRefreshing:YES];
     if (downloadProcess2 == nil)
-    {
-        /*
+    { 
         NSString *day = [[appConfigRecord appConfigInstance] dayURL];
         if (day != nil)
         {
@@ -163,7 +156,6 @@
             downloadProcess2.csvLoadtype = csvLoadtypeDayURL;
             [downloadProcess2 startGetStoreWithRefreshing:NO];
         }
-         */
         /*
         NSString *brandUrl = [[appConfigRecord appConfigInstance] tabURL3];
         if (brandUrl != nil)
@@ -182,13 +174,6 @@
             [downloadProcess4 startGetStoreWithRefreshing:NO];
         }
          */
-        NSString *moreUrl = [[appConfigRecord appConfigInstance] tabURL5];
-        if (moreUrl != nil)
-        {
-            downloadProcess5 = [[downloadStoreDelegate alloc] initWithURL:moreUrl];
-            downloadProcess5.csvLoadtype = csvloadtypeMore;
-            [downloadProcess5 startGetStoreWithRefreshing:NO];
-        }
     }
 }
 

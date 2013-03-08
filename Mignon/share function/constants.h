@@ -14,8 +14,7 @@
 #endif
 
 
-#define appconfigURL @"https://docs.google.com/spreadsheet/pub?key=0Ai_zNVD47hEJdGh1OVVoMU1ITVkyNUZEcEpxLXNVRVE&single=true&gid=0&output=csv"
-#define newsConfig   @"https://docs.google.com/spreadsheet/pub?key=0Ai_zNVD47hEJdGh1OVVoMU1ITVkyNUZEcEpxLXNVRVE&single=true&gid=1&output=csv"
+#define appconfigURL @"https://docs.google.com/spreadsheet/pub?key=0AtEV7pAyVEVNdFBsU1VDZVpzNjUwOWoyQzRTTU0tSmc&single=true&gid=0&output=csv"
 
 #define shilinLocagion_latitude @"25.085"
 #define shilinLocation_longitude @"121.424"

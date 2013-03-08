@@ -11,6 +11,9 @@
 
 @interface downloadStoreDelegate()
 
+@property (nonatomic, retain) NSMutableArray *newsArray;
+@property (nonatomic, retain) NSMutableArray *productArray;
+
 - (void)parseCSVData;
 - (void)checkAppConfigKey:(NSString*)key andValue:(NSString*)value;
 - (void)checkAppDateKey:(NSString*)key andValue:(NSString*)value;
@@ -32,6 +35,14 @@
         {
             currentRow = [[NSMutableArray alloc] initWithCapacity:0];
         }
+        if (_newsArray == nil)
+        {
+            _newsArray = [[NSMutableArray alloc] initWithCapacity:0];
+        }
+        if (_productArray == nil)
+        {
+            _productArray = [[NSMutableArray alloc] initWithCapacity:0];
+        }
     }
     return self;
 }
@@ -40,23 +51,14 @@
 {
     [currLocation release], currLocation = nil;
     [postUrl release], postUrl = nil;
+    [_newsArray release], _newsArray = nil;
+    [_productArray release], _productArray = nil;
     delegate = nil;
     [super dealloc];
 }
 
 - (void)startGetStoreWithRefreshing:(BOOL)ind
 {
-    /*
-    NSURLRequest *request = [NSURLRequest requestWithURL:postUrl
-                                             cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                         timeoutInterval:120];
-    connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    NSLog(@"postUrl:%@",postUrl);
-    if (connection)
-    {
-        responseData = [NSMutableData new];
-    }
-    */
     [currentRow removeAllObjects];
     isRefreshing = ind;
     [self parseCSVData];
@@ -73,6 +75,14 @@
     else if (csvLoadtype == csvLoadtypeDayURL)
     {
         fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvDayFile], [globalFunction getTodayString]];
+    }
+    else if (csvLoadtype == csvLoadtypeNews)
+    {
+        fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvNewsFile], [globalFunction getTodayString]];
+    }
+    else if (csvLoadtype == csvLoadtypeProduct)
+    {
+        fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvProductFile], [globalFunction getTodayString]];
     }
     /*
      表示為重新整理
@@ -122,19 +132,29 @@
     CHCSVParser *p = [(CHCSVParser *)[CHCSVParser alloc] initWithCSVString:csvData encoding:NSUTF8StringEncoding error:nil];
     [p setParserDelegate:self];
     [p parse];
-    if (csvLoadtype == csvLoadtypeStore)
+    if (csvLoadtype == csvLoadtypeNews)
     {
         /*
          排序
          */
-        /*
-        NSArray *sortArray = [storeArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            NSNumber *first = [NSNumber numberWithInt:[(StoreTemp*)a Distance]];
-            NSNumber *second = [NSNumber numberWithInt:[(StoreTemp*)b Distance]];
+        
+        NSArray *tmpArray = [self.newsArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(newsInfo*)a showId];
+            NSNumber *second = [(newsInfo*)b showId];
             return [first compare:second];
         }];
-        [delegate downloadDelegate:self didFinishDownloadWithData:sortArray];
-         */
+        [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
+         
+    }
+    else if (csvLoadtype == csvLoadtypeProduct)
+    {
+        /* 排序 */
+        NSArray *tmpArray = [self.productArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(productInfo*)a showNo];
+            NSNumber *second = [(productInfo*)b showNo];
+            return [first compare:second];
+        }];
+        [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
     }
     NSError *error = nil;
     if (saveInd)
@@ -179,8 +199,8 @@
     // NSLog(@"Tab_%@_Parser!",csvFile);
     switch (csvLoadtype)
     {
-        case csvLoadtypeStore:
-            //[storeArray removeAllObjects];
+        case csvLoadtypeNews:
+            [self.newsArray removeAllObjects];
             break;
     }
 }
@@ -210,53 +230,47 @@
                     [self checkAppDateKey:[currentRow objectAtIndex:0] andValue:[currentRow objectAtIndex:1]];
                 }
                 break;
-            case csvLoadtypeStore:
+            case csvLoadtypeNews:
                 //                NSLog(@"%d-%d.count:%d/",csvLoadtype, lineNumber,  currentRow.count);
-                if (currentRow.count == 30)
+                if (currentRow.count == 7)
                 {
-                    if ([@"Y" compare:[currentRow objectAtIndex:29]] == 0 )
+                    if ([@"Y" compare:[currentRow objectAtIndex:6]] == 0 )
                     {
-                        /*
-                        StoreTemp *StoreA = [[StoreTemp alloc] init];
-                        StoreA.StoreID = [currentRow objectAtIndex:0];
-                        StoreA.StoreType  = [currentRow objectAtIndex:1];
-                        StoreA.slyPush = [currentRow objectAtIndex:2];
-                        StoreA.slyRanking  = [currentRow objectAtIndex:3];
-                        StoreA.StoreName = [currentRow objectAtIndex:4];
-                        StoreA.StoreAddress  = [currentRow objectAtIndex:5];
-                        StoreA.StoreTel  = [currentRow objectAtIndex:6];
-                        StoreA.MapX = [currentRow objectAtIndex:7];
-                        StoreA.MapY = [currentRow objectAtIndex:8];
-                        StoreA.PicA = [currentRow objectAtIndex:9];
-                        StoreA.PicB  = [currentRow objectAtIndex:10];
-                        StoreA.StoreNews = [currentRow objectAtIndex:11];
-                        StoreA.StoreNewsDate  = [currentRow objectAtIndex:12];
-                        StoreA.StoreP1 = [currentRow objectAtIndex:13];
-                        StoreA.StoreP1URL  = [currentRow objectAtIndex:14];
-                        StoreA.StoreP2 = [currentRow objectAtIndex:15];
-                        StoreA.StoreP2URL  = [currentRow objectAtIndex:16];
-                        StoreA.StoreP3 = [currentRow objectAtIndex:17];
-                        StoreA.StoreP3URL  = [currentRow objectAtIndex:18];
-                        StoreA.StoreP4 = [currentRow objectAtIndex:19];
-                        StoreA.StoreP4URL  = [currentRow objectAtIndex:20];
-                        StoreA.MovTicket = [currentRow objectAtIndex:21];
-                        StoreA.MovTicketDate  = [currentRow objectAtIndex:22];
-                        StoreA.slyCardSrv = [currentRow objectAtIndex:23];
-                        StoreA.slyCardSrvDate  = [currentRow objectAtIndex:24];
-                        StoreA.StoreHR = [currentRow objectAtIndex:25];
-                        StoreA.StoreHRContent  = [currentRow objectAtIndex:26];
-                        StoreA.StoreHRDate = [currentRow objectAtIndex:27];
-                        StoreA.FBURL = [currentRow objectAtIndex:28];
-                        StoreA.Enable = [currentRow objectAtIndex:29];
-                        CLLocation *distanceLocation = [[[CLLocation alloc] initWithLatitude:[StoreA.MapX doubleValue] longitude:[StoreA.MapY doubleValue]] autorelease] ;
-                        CLLocationDistance distance = [currLocation distanceFromLocation:distanceLocation];
-                        NSString *distanceString = [[[NSString alloc] initWithFormat:@"%.0f",distance] autorelease] ;
+                        newsInfo *info = [newsInfo new];
+                        info.showId = [NSNumber numberWithInteger:[[currentRow objectAtIndex:0] integerValue]];
+                        info.title = [currentRow objectAtIndex:1];
+                        info.content = [currentRow objectAtIndex:2];
+                        info.url = [currentRow objectAtIndex:3];
+                        info.start = [currentRow objectAtIndex:4];
+                        info.end = [currentRow objectAtIndex:5];
+                        [self.newsArray addObject:info];
+                        [info release];
+                    }
+                }
+                break;
+            case csvLoadtypeProduct:
+                if ([currentRow count] == 12)
+                {
+                    if ([@"Y" compare:[currentRow objectAtIndex:1]] == 0)
+                    {
+                        productInfo *info = [productInfo new];
+                        info.showNo = [NSNumber numberWithInteger:[[currentRow objectAtIndex:0] integerValue]];
+                        info.showInd = [currentRow objectAtIndex:1];
+                        info.category = [currentRow objectAtIndex:2];
+                        info.itemName = [currentRow objectAtIndex:3];
+                        info.price = [NSNumber numberWithDouble:[[currentRow objectAtIndex:4] doubleValue]];
+                        info.discound = [NSNumber numberWithDouble:[[currentRow objectAtIndex:5] doubleValue]];
+                        NSString *size = [currentRow objectAtIndex:6];
+                        NSString *color = [currentRow objectAtIndex:7];
+                        info.sizes = [size componentsSeparatedByString:@","];
+                        info.colors = [color componentsSeparatedByString:@","];
+                        info.stock = [NSNumber numberWithInteger:[[currentRow objectAtIndex:8] integerValue]];
+                        info.imageUrl = [currentRow objectAtIndex:9];
+                        info.content = [currentRow objectAtIndex:10];
+                        info.comment = [currentRow objectAtIndex:11];
                         
-                        StoreA.Distance = [distanceString integerValue] ;
-                        
-                        [storeArray addObject:StoreA];
-                        [StoreA release];
-                         */
+                        [self.productArray addObject:info];
+                        [info release];
                     }
                 }
                 break;
@@ -309,7 +323,6 @@
     }
     else if ([key isEqualToString:@"TAB_URL5"])
     {
-        //https://docs.google.com/spreadsheet/pub?key=0Ai_zNVD47hEJdFhsb1dKdWJQeDlpYmc1OVVVODZIVGc&single=true&gid=0&output=csv
         [[appConfigRecord appConfigInstance] setTabURL5:value];
     }
     else if ([key isEqualToString:@"LOC_CENTER_X"])

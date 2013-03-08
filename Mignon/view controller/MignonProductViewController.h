@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface MignonProductViewController : UIViewController
-
+@interface MignonProductViewController : UIViewController<MBProgressHUDDelegate,
+UITableViewDataSource, UITableViewDelegate>
+{
+    IBOutlet UITableView *aTableView;
+    MBProgressHUD       *HUD;
+}
 @end

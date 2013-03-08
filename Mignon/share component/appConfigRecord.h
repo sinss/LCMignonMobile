@@ -27,6 +27,8 @@
     NSString *categoryURL;
     NSNumber *latitude;
     NSNumber *longitude;
+    
+    NSMutableArray *shopCartArray;
 }
 
 @property (nonatomic, retain) NSString *dayURL;
@@ -45,6 +47,7 @@
 @property (nonatomic, retain) NSString *categoryURL;
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
+@property (nonatomic, retain) NSMutableArray *shopCartArray;
 
 
 +(appConfigRecord*)appConfigInstance;

@@ -7,19 +7,19 @@
 //
 
 #import "MignonNewsViewController.h"
+#import "downloadStoreDelegate.h"
+#import "appConfigRecord.h"
+#import "ODRefreshControl.h"
 
-@interface MignonNewsViewController () <UISearchBarDelegate>
+
+@interface MignonNewsViewController () <downloadStoreListProcess>
 {
-    NSMutableArray *productArray;
+    downloadStoreDelegate *downloadNews;
 }
 
-@property (nonatomic, retain) UISearchBar *searchBar;
-@property (nonatomic, retain) NSMutableArray *fetchProductArray;
-@property (nonatomic, retain) NSMutableString *searchKey;
+@property (nonatomic, retain) NSArray *newsArray;
 
-- (void)createSearchBar;
-- (void)startDownloadProductList;
-- (void)fetchRresult;
+- (void)startGetNewsContentWithRefreshInd:(NSString*)refreshInd;
 
 @end
 
@@ -30,17 +30,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        if (_searchKey == nil)
+        if (downloadNews == nil)
         {
-            _searchKey = [[NSMutableString alloc] initWithCapacity:0];
-        }
-        if (_fetchProductArray == nil)
-        {
-            _fetchProductArray = [[NSMutableArray alloc] initWithCapacity:0];
-        }
-        if (productArray == nil)
-        {
-            productArray = [[NSMutableArray alloc] initWithCapacity:0];
+            downloadNews = [[downloadStoreDelegate alloc] initWithURL:[[appConfigRecord appConfigInstance] tabURL1]];
+            [downloadNews setCsvLoadtype:csvLoadtypeNews];
+            [downloadNews setDelegate:self];
         }
     }
     return self;
@@ -49,7 +43,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createSearchBar];
+    
+    UIView *emptyView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [aTableView setTableFooterView:emptyView];
+    
+    [aTableView setDelegate:self];
+    [aTableView setDataSource:self];
+    
+    if (HUD == nil && [HUD retainCount] == 0)
+    {
+        NSLog(@"Launch View(start)");
+        HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:HUD];
+        
+         HUD.dimBackground = YES;
+         HUD.delegate = self;
+         HUD.labelText = @"資料讀取中...";
+         [HUD showWhileExecuting:@selector(startGetNewsContentWithRefreshInd:) onTarget:self withObject:@"YES" animated:YES];
+    }
+    
+    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:aTableView];
+    [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,61 +74,80 @@
 
 - (void)dealloc
 {
-    [_fetchProductArray release], _fetchProductArray = nil;
-    [_searchKey release], _searchKey = nil;
-    [productArray release], productArray = nil;
-    [_searchBar release], _searchBar = nil;
+    [_newsArray release], _newsArray = nil;
     [super dealloc];
 }
 
-#pragma mark - UISearchBarDelegate
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+- (void)startGetNewsContentWithRefreshInd:(NSString*)refreshInd
 {
-    [self.searchKey setString:[searchBar text]];
+    if([refreshInd isEqualToString:@"YES"])
+        [downloadNews startGetStoreWithRefreshing:YES];
+    else
+        [downloadNews startGetStoreWithRefreshing:NO];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+#pragma mark - downloadStoreDelegate
+- (void)downloadDelegate:(downloadStoreDelegate *)obj didFaildDownloadWithError:(NSString *)errorMessage
 {
-    [self.searchBar resignFirstResponder];
+    NSLog(@"download news fail");
 }
 
-#pragma mark - createBarItem
-- (void)createSearchBar
+- (void)downloadDelegate:(downloadStoreDelegate *)obj didFinishDownloadWithData:(NSArray *)storeArray
 {
-    if (self.searchBar == nil)
+    self.newsArray = [NSArray arrayWithArray:storeArray];
+    [aTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - ODRefreshControl refresh function
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+    double delayInSeconds = 1.5f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+                   {
+                       [self performSelector:@selector(startGetNewsContentWithRefreshInd:) withObject:@"YES"];
+                       [refreshControl endRefreshing];
+                   });
+}
+
+#pragma mark - UITableViewDataSource, UITabelViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.newsArray count];
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *newsCellIdentifier = @"";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
+    NSInteger row = [indexPath row];
+    if (cell == nil)
     {
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
-        [self.searchBar setPlaceholder:[NSString stringWithFormat:@"關鍵字搜尋"]];
-        [self.searchBar setDelegate:self];
-        //建立 toolbar
-        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
-        toolbar.tintColor = self.navigationController.navigationBar.tintColor;
-        UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithTitle:@"收合" style:UIBarButtonItemStyleBordered target:self action:@selector(closeKeyboard)];
-        [toolbar setItems:[NSArray arrayWithObjects:flexItem,closeItem, nil]];
-        [self.searchBar setInputAccessoryView:toolbar];
-        [flexItem release];
-        [closeItem release];
-        [toolbar release];
-        
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsCellIdentifier] autorelease];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        if (row % 2 == 1)
+        {
+            UIView *cellView = [[UIView alloc] init];
+            [cellView setBackgroundColor:oddCellBackgroundColor];
+            [cell setBackgroundView:cellView];
+            [cellView release];
+        }
     }
-    
-    aTableView.tableHeaderView = self.searchBar;
+    newsInfo *info = [self.newsArray objectAtIndex:row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ ~ %@, %@",info.start, info.end, info.title]];
+    [cell.detailTextLabel setText:info.content];
+    return cell;
 }
 
-- (void)closeKeyboard
-{
-    [self.searchBar resignFirstResponder];
-}
-
-- (void)startDownloadProductList
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 }
-
-- (void)fetchRresult
-{
-    
-}
-
 @end

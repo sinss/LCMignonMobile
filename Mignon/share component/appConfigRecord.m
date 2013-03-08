@@ -13,7 +13,7 @@ appConfigRecord *appConfigInstance;
 @implementation appConfigRecord
 @synthesize dayURL, tabURL1, tabURL2, tabURL3, tabURL4, tabURL5;
 @synthesize tabTitle1, tabTitle2, tabTitle3, tabTitle4, tabTitle5;
-@synthesize currentAddress, currentLocation, categoryURL, latitude, longitude;
+@synthesize currentAddress, currentLocation, categoryURL, latitude, longitude, shopCartArray;
 
 + (appConfigRecord*)appConfigInstance
 {
@@ -42,6 +42,7 @@ appConfigRecord *appConfigInstance;
     [categoryURL release], categoryURL = nil;
     [longitude release], longitude = nil;
     [latitude release], latitude = nil;
+    [shopCartArray release], shopCartArray = nil;
     [super dealloc];
 }
 

@@ -18,11 +18,6 @@
     
     downloadStoreDelegate *downloadProcess;
     downloadStoreDelegate *downloadProcess2;
-    downloadStoreDelegate *downloadProcess3;
-    downloadStoreDelegate *downloadProcess4;
-    downloadStoreDelegate *downloadProcess5;
-    downloadStoreDelegate *downloadProcess6;
-    downloadStoreDelegate *downloadProcess7;
 }
 
 
