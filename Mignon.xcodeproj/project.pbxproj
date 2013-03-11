@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8867DB16EE0B890076E8F5 /* MignonProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867D916EE0B890076E8F5 /* MignonProductDetailViewController.m */; };
+		0F8867DC16EE0B890076E8F5 /* MignonProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8867DA16EE0B890076E8F5 /* MignonProductDetailViewController.xib */; };
+		0F8867DF16EE0CE50076E8F5 /* productCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867DE16EE0CE50076E8F5 /* productCell.m */; };
+		0F8867E116EE0CFA0076E8F5 /* productCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8867E016EE0CFA0076E8F5 /* productCell.xib */; };
+		0F8867E416EE101F0076E8F5 /* StrikeThroughLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867E316EE101F0076E8F5 /* StrikeThroughLabel.m */; };
+		0F8867E716EE18A90076E8F5 /* productImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867E616EE18A90076E8F5 /* productImageCell.m */; };
+		0F8867E916EE18BD0076E8F5 /* productImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8867E816EE18BD0076E8F5 /* productImageCell.xib */; };
+		0F8867EC16EE1AEF0076E8F5 /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */; };
 		0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9216E8D131002F5A65 /* UIKit.framework */; };
 		0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9416E8D131002F5A65 /* Foundation.framework */; };
 		0FF0EE9716E8D131002F5A65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */; };
@@ -161,6 +169,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8867D816EE0B890076E8F5 /* MignonProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MignonProductDetailViewController.h; sourceTree = "<group>"; };
+		0F8867D916EE0B890076E8F5 /* MignonProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonProductDetailViewController.m; sourceTree = "<group>"; };
+		0F8867DA16EE0B890076E8F5 /* MignonProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MignonProductDetailViewController.xib; sourceTree = "<group>"; };
+		0F8867DD16EE0CE50076E8F5 /* productCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productCell.h; sourceTree = "<group>"; };
+		0F8867DE16EE0CE50076E8F5 /* productCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productCell.m; sourceTree = "<group>"; };
+		0F8867E016EE0CFA0076E8F5 /* productCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = productCell.xib; sourceTree = "<group>"; };
+		0F8867E216EE101F0076E8F5 /* StrikeThroughLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrikeThroughLabel.h; sourceTree = "<group>"; };
+		0F8867E316EE101F0076E8F5 /* StrikeThroughLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrikeThroughLabel.m; sourceTree = "<group>"; };
+		0F8867E516EE18A90076E8F5 /* productImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productImageCell.h; sourceTree = "<group>"; };
+		0F8867E616EE18A90076E8F5 /* productImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productImageCell.m; sourceTree = "<group>"; };
+		0F8867E816EE18BD0076E8F5 /* productImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = productImageCell.xib; sourceTree = "<group>"; };
+		0F8867EA16EE1AEF0076E8F5 /* MathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathFunction.h; sourceTree = "<group>"; };
+		0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathFunction.m; sourceTree = "<group>"; };
 		0FF0EE8F16E8D131002F5A65 /* Mignon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mignon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0EE9216E8D131002F5A65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FF0EE9416E8D131002F5A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -465,6 +486,12 @@
 				0FF0F28116E8D626002F5A65 /* customTextViewCell.h */,
 				0FF0F28216E8D626002F5A65 /* customTextViewCell.m */,
 				0FF0F28316E8D626002F5A65 /* customTextViewCell.xib */,
+				0F8867DD16EE0CE50076E8F5 /* productCell.h */,
+				0F8867DE16EE0CE50076E8F5 /* productCell.m */,
+				0F8867E016EE0CFA0076E8F5 /* productCell.xib */,
+				0F8867E516EE18A90076E8F5 /* productImageCell.h */,
+				0F8867E616EE18A90076E8F5 /* productImageCell.m */,
+				0F8867E816EE18BD0076E8F5 /* productImageCell.xib */,
 			);
 			path = "custom cell";
 			sourceTree = "<group>";
@@ -472,6 +499,8 @@
 		0FF0F28416E8D626002F5A65 /* library */ = {
 			isa = PBXGroup;
 			children = (
+				0F8867E216EE101F0076E8F5 /* StrikeThroughLabel.h */,
+				0F8867E316EE101F0076E8F5 /* StrikeThroughLabel.m */,
 				0FF0F39616E8D671002F5A65 /* MSNavigationPaneViewController */,
 				32341F5116EDB57C006A877C /* BrowserViewController */,
 				0FF0F42B16E8F258002F5A65 /* HMSegmentedControl */,
@@ -658,6 +687,8 @@
 		0FF0F30016E8D626002F5A65 /* share function */ = {
 			isa = PBXGroup;
 			children = (
+				0F8867EA16EE1AEF0076E8F5 /* MathFunction.h */,
+				0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */,
 				0FF0F30116E8D626002F5A65 /* constants.h */,
 				0FF0F30216E8D626002F5A65 /* globalFunction.h */,
 				0FF0F30316E8D626002F5A65 /* globalFunction.m */,
@@ -699,6 +730,9 @@
 				0FF0F3B816E8D8FF002F5A65 /* MignonMoreViewController.h */,
 				0FF0F3B916E8D8FF002F5A65 /* MignonMoreViewController.m */,
 				0FF0F3BA16E8D8FF002F5A65 /* MignonMoreViewController.xib */,
+				0F8867D816EE0B890076E8F5 /* MignonProductDetailViewController.h */,
+				0F8867D916EE0B890076E8F5 /* MignonProductDetailViewController.m */,
+				0F8867DA16EE0B890076E8F5 /* MignonProductDetailViewController.xib */,
 			);
 			path = "view controller";
 			sourceTree = "<group>";
@@ -919,6 +953,9 @@
 				32341F6116EDB57C006A877C /* right@2x.png in Resources */,
 				32341F6E16EDD415006A877C /* MignonShareViewController.xib in Resources */,
 				32341F7016EDD962006A877C /* title_bg.png in Resources */,
+				0F8867DC16EE0B890076E8F5 /* MignonProductDetailViewController.xib in Resources */,
+				0F8867E116EE0CFA0076E8F5 /* productCell.xib in Resources */,
+				0F8867E916EE18BD0076E8F5 /* productImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +1013,11 @@
 				32341F5F16EDB57C006A877C /* MyApplication.m in Sources */,
 				32341F6416EDD093006A877C /* shareInfo.m in Sources */,
 				32341F6D16EDD415006A877C /* MignonShareViewController.m in Sources */,
+				0F8867DB16EE0B890076E8F5 /* MignonProductDetailViewController.m in Sources */,
+				0F8867DF16EE0CE50076E8F5 /* productCell.m in Sources */,
+				0F8867E416EE101F0076E8F5 /* StrikeThroughLabel.m in Sources */,
+				0F8867E716EE18A90076E8F5 /* productImageCell.m in Sources */,
+				0F8867EC16EE1AEF0076E8F5 /* MathFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

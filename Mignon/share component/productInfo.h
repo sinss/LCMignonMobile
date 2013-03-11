@@ -19,7 +19,7 @@
     NSArray *sizes;
     NSArray *colors;
     NSNumber *stock;
-    NSString *imageUrl;
+    NSArray *imageArray;
     NSString *content;
     NSString *comment;
 }
@@ -33,7 +33,7 @@
 @property (nonatomic, retain) NSArray *sizes;
 @property (nonatomic, retain) NSArray *colors;
 @property (nonatomic, retain) NSNumber *stock;
-@property (nonatomic, retain) NSString *imageUrl;
+@property (nonatomic, retain) NSArray *imageArray;
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, retain) NSString *comment;
 

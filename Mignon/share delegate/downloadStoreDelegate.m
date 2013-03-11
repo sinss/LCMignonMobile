@@ -314,7 +314,7 @@
                         info.sizes = [size componentsSeparatedByString:@","];
                         info.colors = [color componentsSeparatedByString:@","];
                         info.stock = [NSNumber numberWithInteger:[[currentRow objectAtIndex:8] integerValue]];
-                        info.imageUrl = [currentRow objectAtIndex:9];
+                        info.imageArray = [[currentRow objectAtIndex:9] componentsSeparatedByString:@","];
                         info.content = [currentRow objectAtIndex:10];
                         info.comment = [currentRow objectAtIndex:11];
                         

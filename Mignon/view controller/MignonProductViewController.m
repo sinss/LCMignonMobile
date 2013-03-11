@@ -7,23 +7,20 @@
 //
 
 #import "MignonProductViewController.h"
+#import "MathFunction.h"
 #import "downloadStoreDelegate.h"
 #import "appConfigRecord.h"
 #import "ODRefreshControl.h"
+#import "productCell.h"
+#import "MignonProductDetailViewController.h"
 
-@interface MignonProductViewController () <UISearchBarDelegate, downloadStoreListProcess>
+@interface MignonProductViewController () <downloadStoreListProcess>
 {
     downloadStoreDelegate *downloadNews;
 }
 
 @property (nonatomic, retain) NSArray *productArray;
 
-@property (nonatomic, retain) UISearchBar *searchBar;
-@property (nonatomic, retain) NSMutableArray *fetchProductArray;
-@property (nonatomic, retain) NSMutableString *searchKey;
-
-- (void)createSearchBar;
-- (void)fetchRresult;
 
 - (void)startGetProductContentWithRefreshInd:(NSString*)refreshInd;
 
@@ -42,14 +39,6 @@
             [downloadNews setCsvLoadtype:csvLoadtypeProduct];
             [downloadNews setDelegate:self];
         }
-        if (_searchKey == nil)
-        {
-            _searchKey = [[NSMutableString alloc] initWithCapacity:0];
-        }
-        if (_fetchProductArray == nil)
-        {
-            _fetchProductArray = [[NSMutableArray alloc] initWithCapacity:0];
-        }
         if (_productArray == nil)
         {
             _productArray = [[NSMutableArray alloc] initWithCapacity:0];
@@ -61,7 +50,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createSearchBar];
     UIView *emptyView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
     [aTableView setTableFooterView:emptyView];
     
@@ -77,7 +65,7 @@
         HUD.dimBackground = YES;
         HUD.delegate = self;
         HUD.labelText = @"資料讀取中...";
-        [HUD showWhileExecuting:@selector(startGetProductContentWithRefreshInd:) onTarget:self withObject:@"NO" animated:YES];
+        [HUD showWhileExecuting:@selector(startGetProductContentWithRefreshInd:) onTarget:self withObject:@"YES" animated:YES];
     }
     
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:aTableView];
@@ -92,79 +80,10 @@
 
 - (void)dealloc
 {
-    [_fetchProductArray release], _fetchProductArray = nil;
-    [_searchKey release], _searchKey = nil;
     [_productArray release], _productArray = nil;
-    [_searchBar release], _searchBar = nil;
     [aTableView release], aTableView = nil;
     [super dealloc];
 }
-
-#pragma mark - UISearchBarDelegate
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
-{
-    [self.searchKey setString:[searchBar text]];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    [self.searchBar resignFirstResponder];
-}
-
-#pragma mark - createBarItem
-- (void)createSearchBar
-{
-    if (self.searchBar == nil)
-    {
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
-        [self.searchBar setTintColor:self.navigationController.navigationBar.tintColor];
-        self.searchBar.layer.borderWidth = 0;
-        [self.searchBar setPlaceholder:[NSString stringWithFormat:@"關鍵字搜尋"]];
-        [self.searchBar setDelegate:self];
-        //建立 toolbar
-        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
-        toolbar.tintColor = self.navigationController.navigationBar.tintColor;
-        UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithTitle:@"收合" style:UIBarButtonItemStyleBordered target:self action:@selector(closeKeyboard)];
-        [toolbar setItems:[NSArray arrayWithObjects:flexItem,closeItem, nil]];
-        [self.searchBar setInputAccessoryView:toolbar];
-        [flexItem release];
-        [closeItem release];
-        [toolbar release];
-        
-    }
-    self.navigationItem.titleView = self.searchBar;
-    [aTableView setContentOffset:CGPointMake(0,40) animated:NO];
-}
-
-- (void)closeKeyboard
-{
-    [self.searchBar resignFirstResponder];
-}
-
-- (void)startDownloadProductList
-{
-    
-}
-
-- (void)fetchRresult
-{
-    NSMutableString *tmp = [NSMutableString stringWithCapacity:0];
-    if ([self.searchKey length] == 0)
-    {
-        [tmp setString:@"1=1"];
-    }
-    else
-    {
-        
-    }
-    [self.fetchProductArray removeAllObjects];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:tmp];
-    NSArray *tmpArray = [self.productArray filteredArrayUsingPredicate:predicate];
-    [self.fetchProductArray addObjectsFromArray:tmpArray];
-    [aTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 
 - (void)startGetProductContentWithRefreshInd:(NSString*)refreshInd;
 {
@@ -183,7 +102,7 @@
 - (void)downloadDelegate:(downloadStoreDelegate *)obj didFinishDownloadWithData:(NSArray *)storeArray
 {
     self.productArray = [NSArray arrayWithArray:storeArray];
-    [self fetchRresult];
+    [aTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - ODRefreshControl refresh function
@@ -206,20 +125,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.fetchProductArray count];
+    return [self.productArray count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *newsCellIdentifier = @"";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
+    static NSString *productCellIdentifier = @"productCellIdentifier";
     NSInteger row = [indexPath row];
+    productCell *cell = [tableView dequeueReusableCellWithIdentifier:productCellIdentifier];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsCellIdentifier] autorelease];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-        [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"productCell" owner:self options:nil];
+        for (id currentObj in topLevelObjects)
+        {
+            if ([currentObj isKindOfClass:[productCell class]])
+            {
+                cell = currentObj;
+            }
+            break;
+        }
         if (row % 2 == 1)
         {
             UIView *cellView = [[UIView alloc] init];
@@ -229,16 +153,29 @@
             [cell.textLabel setBackgroundColor:[UIColor clearColor]];
             [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
         }
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
-    productInfo *info = [self.fetchProductArray objectAtIndex:row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@, %@, %@",info.itemName, info.price, info.discound]];
-    [cell.detailTextLabel setText:info.content];
+    productInfo *info = [self.productArray objectAtIndex:row];
+    [cell.categoryLabel setText:info.category];
+    [cell.titleLabel setText:info.itemName];
+    if ([info.discound doubleValue] > 0)
+    {
+        [cell setPriceDeleteLineEnable:YES andText:[[MathFunction mathFunctionInstance] displayDefaultNumberWithNumber:info.price]];
+    }
+    else
+    {
+        [cell setPriceDeleteLineEnable:NO andText:[[MathFunction mathFunctionInstance] displayDefaultNumberWithNumber:info.price]];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    MignonProductDetailViewController *productDetailView = [[MignonProductDetailViewController alloc] initWithNibName:@"MignonProductDetailViewController" bundle:nil];
+    productInfo *info = [self.productArray objectAtIndex:[indexPath row]];
+    [productDetailView setCurrentProduct:info];
+    [self.navigationController pushViewController:productDetailView animated:YES];
+    [productDetailView release];
 }
 
 

@@ -124,7 +124,7 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *newsCellIdentifier = @"";
+    static NSString *newsCellIdentifier = @"newsCellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
     NSInteger row = [indexPath row];
     if (cell == nil)

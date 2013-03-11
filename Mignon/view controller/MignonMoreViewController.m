@@ -124,12 +124,12 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *newsCellIdentifier = @"";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
+    static NSString *moreCellIdentifier = @"moreCellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:moreCellIdentifier];
     NSInteger row = [indexPath row];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:newsCellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:moreCellIdentifier] autorelease];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];

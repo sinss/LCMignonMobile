@@ -183,9 +183,9 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *newsCellIdentifier = @"newsCellIdentifier";
+    static NSString *shareCellIdentifier = @"shareCellIdentifier";
     NSInteger sec = [indexPath section];
-    customTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
+    customTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shareCellIdentifier];
     if (cell == nil)
     {
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"customTextViewCell" owner:self options:nil];

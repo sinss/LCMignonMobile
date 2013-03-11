@@ -9,7 +9,7 @@
 #import "productInfo.h"
 
 @implementation productInfo
-@synthesize showInd, showNo, category, itemName, price, discound, sizes, colors, stock, imageUrl, content, comment;
+@synthesize showInd, showNo, category, itemName, price, discound, sizes, colors, stock, imageArray, content, comment;
 
 - (void)dealloc
 {
@@ -22,7 +22,7 @@
     [sizes release], sizes = nil;
     [colors release], colors = nil;
     [stock release], stock = nil;
-    [imageUrl release], imageUrl = nil;
+    [imageArray release], imageArray = nil;
     [content release], content = nil;
     [comment release], comment = nil;
     [super dealloc];
