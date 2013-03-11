@@ -225,6 +225,8 @@
             [cellView setBackgroundColor:oddCellBackgroundColor];
             [cell setBackgroundView:cellView];
             [cellView release];
+            [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+            [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
         }
     }
     productInfo *info = [self.fetchProductArray objectAtIndex:row];
