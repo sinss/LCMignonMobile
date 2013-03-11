@@ -13,6 +13,8 @@
 
 @property (nonatomic, retain) NSMutableArray *newsArray;
 @property (nonatomic, retain) NSMutableArray *productArray;
+@property (nonatomic, retain) NSMutableArray *shareArray;
+@property (nonatomic, retain) NSMutableArray *moreArray;
 
 - (void)parseCSVData;
 - (void)checkAppConfigKey:(NSString*)key andValue:(NSString*)value;
@@ -43,6 +45,14 @@
         {
             _productArray = [[NSMutableArray alloc] initWithCapacity:0];
         }
+        if (_moreArray == nil)
+        {
+            _moreArray = [[NSMutableArray alloc] initWithCapacity:0];
+        }
+        if (_shareArray == nil)
+        {
+            _shareArray = [[NSMutableArray alloc] initWithCapacity:0];
+        }
     }
     return self;
 }
@@ -53,6 +63,8 @@
     [postUrl release], postUrl = nil;
     [_newsArray release], _newsArray = nil;
     [_productArray release], _productArray = nil;
+    [_moreArray release], _moreArray = nil;
+    [_shareArray release], _shareArray = nil;
     delegate = nil;
     [super dealloc];
 }
@@ -83,6 +95,14 @@
     else if (csvLoadtype == csvLoadtypeProduct)
     {
         fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvProductFile], [globalFunction getTodayString]];
+    }
+    else if (csvLoadtype == csvLoadTypeShare)
+    {
+        fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvShareFile], [globalFunction getTodayString]];
+    }
+    else if (csvLoadtype == csvLoadTypeMore)
+    {
+        fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvMoreFile], [globalFunction getTodayString]];
     }
     /*
      表示為重新整理
@@ -156,6 +176,26 @@
         }];
         [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
     }
+    else if (csvLoadtype == csvLoadTypeShare)
+    {
+        /* 排序 */
+        NSArray *tmpArray = [self.shareArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(shareInfo*)a shareNo];
+            NSNumber *second = [(shareInfo*)b shareNo];
+            return [first compare:second];
+        }];
+        [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
+    }
+    else if (csvLoadtype == csvLoadTypeMore)
+    {
+        /* 排序 */
+        NSArray *tmpArray = [self.moreArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(moreInfo*)a seq];
+            NSNumber *second = [(moreInfo*)b seq];
+            return [first compare:second];
+        }];
+        [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
+    }
     NSError *error = nil;
     if (saveInd)
     {
@@ -201,6 +241,15 @@
     {
         case csvLoadtypeNews:
             [self.newsArray removeAllObjects];
+            break;
+        case csvLoadtypeProduct:
+            [self.productArray removeAllObjects];
+            break;
+        case csvLoadTypeShare:
+            [self.shareArray removeAllObjects];
+            break;
+        case csvLoadTypeMore:
+            [self.moreArray removeAllObjects];
             break;
     }
 }
@@ -272,6 +321,35 @@
                         [self.productArray addObject:info];
                         [info release];
                     }
+                }
+                break;
+            case csvLoadTypeShare:
+                if ([currentRow count] == 6)
+                {
+                    if ([@"Y" compare:[currentRow objectAtIndex:5]] == 0)
+                    {
+                        shareInfo *info = [shareInfo new];
+                        info.shareNo = [NSNumber numberWithInteger:[[currentRow objectAtIndex:0] integerValue]];
+                        info.shareTitle = [currentRow objectAtIndex:1];
+                        info.shareContent = [currentRow objectAtIndex:2];
+                        info.imageUrl = [currentRow objectAtIndex:3];
+                        info.sourceUrl = [currentRow objectAtIndex:4];
+                        info.showInd = [currentRow objectAtIndex:5];
+                        [self.shareArray addObject:info];
+                        [info release];
+                    }
+                }
+                break;
+            case csvLoadTypeMore:
+                if ([currentRow count] == 4)
+                {
+                    moreInfo *info = [moreInfo alloc];
+                    info.itemTitle = [currentRow objectAtIndex:0];
+                    info.itemType = [currentRow objectAtIndex:1];
+                    info.itemContent = [currentRow objectAtIndex:2];
+                    info.seq = [NSNumber numberWithInteger:[[currentRow objectAtIndex:3] integerValue]];
+                    [self.moreArray addObject:info];
+                    [info release];
                 }
                 break;
         }

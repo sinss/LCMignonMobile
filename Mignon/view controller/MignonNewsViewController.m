@@ -59,7 +59,7 @@
          HUD.dimBackground = YES;
          HUD.delegate = self;
          HUD.labelText = @"資料讀取中...";
-         [HUD showWhileExecuting:@selector(startGetNewsContentWithRefreshInd:) onTarget:self withObject:@"YES" animated:YES];
+         [HUD showWhileExecuting:@selector(startGetNewsContentWithRefreshInd:) onTarget:self withObject:@"NO" animated:YES];
     }
     
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:aTableView];
@@ -75,6 +75,7 @@
 - (void)dealloc
 {
     [_newsArray release], _newsArray = nil;
+    [aTableView release];
     [super dealloc];
 }
 
@@ -132,6 +133,8 @@
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+        [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
         if (row % 2 == 1)
         {
             UIView *cellView = [[UIView alloc] init];

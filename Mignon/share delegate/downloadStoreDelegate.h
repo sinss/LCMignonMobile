@@ -17,6 +17,8 @@
 #import "appDateRecord.h"
 #import "newsInfo.h"
 #import "productInfo.h"
+#import "shareInfo.h"
+#import "moreInfo.h"
 
 enum
 {
@@ -24,6 +26,8 @@ enum
     csvLoadtypeDayURL = 0,
     csvLoadtypeNews = 1,
     csvLoadtypeProduct = 2,
+    csvLoadTypeShare = 4,
+    csvLoadTypeMore = 5,
 };
 typedef NSUInteger csvLoadType;
 @class downloadStoreDelegate;

@@ -77,7 +77,7 @@
         HUD.dimBackground = YES;
         HUD.delegate = self;
         HUD.labelText = @"資料讀取中...";
-        [HUD showWhileExecuting:@selector(startGetProductContentWithRefreshInd:) onTarget:self withObject:@"YES" animated:YES];
+        [HUD showWhileExecuting:@selector(startGetProductContentWithRefreshInd:) onTarget:self withObject:@"NO" animated:YES];
     }
     
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:aTableView];
@@ -96,6 +96,7 @@
     [_searchKey release], _searchKey = nil;
     [_productArray release], _productArray = nil;
     [_searchBar release], _searchBar = nil;
+    [aTableView release], aTableView = nil;
     [super dealloc];
 }
 

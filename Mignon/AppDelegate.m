@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MSNavigationPaneViewController.h"
 #import "MSMasterViewController.h"
-
+#import "BrowserViewController.h"
 
 @implementation AppDelegate
 
@@ -75,7 +75,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self GetLocation];
+    //[self GetLocation];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -270,4 +270,5 @@
         }
 	}
 }
+
 @end

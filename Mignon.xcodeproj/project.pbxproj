@@ -146,6 +146,18 @@
 		0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */; };
 		32341CD216E9E09C006A877C /* newsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341CD116E9E09C006A877C /* newsInfo.m */; };
 		32341CD516E9ED6D006A877C /* productInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341CD416E9ED6D006A877C /* productInfo.m */; };
+		32341F5016EDAEA4006A877C /* moreInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F4F16EDAEA4006A877C /* moreInfo.m */; };
+		32341F5B16EDB57C006A877C /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F5316EDB57C006A877C /* BrowserViewController.m */; };
+		32341F5C16EDB57C006A877C /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32341F5416EDB57C006A877C /* BrowserViewController.xib */; };
+		32341F5D16EDB57C006A877C /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F5516EDB57C006A877C /* left.png */; };
+		32341F5E16EDB57C006A877C /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F5616EDB57C006A877C /* left@2x.png */; };
+		32341F5F16EDB57C006A877C /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F5816EDB57C006A877C /* MyApplication.m */; };
+		32341F6016EDB57C006A877C /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F5916EDB57C006A877C /* right.png */; };
+		32341F6116EDB57C006A877C /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F5A16EDB57C006A877C /* right@2x.png */; };
+		32341F6416EDD093006A877C /* shareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F6316EDD093006A877C /* shareInfo.m */; };
+		32341F6D16EDD415006A877C /* MignonShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F6B16EDD414006A877C /* MignonShareViewController.m */; };
+		32341F6E16EDD415006A877C /* MignonShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32341F6C16EDD415006A877C /* MignonShareViewController.xib */; };
+		32341F7016EDD962006A877C /* title_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F6F16EDD962006A877C /* title_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -332,6 +344,23 @@
 		32341CD116E9E09C006A877C /* newsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsInfo.m; sourceTree = "<group>"; };
 		32341CD316E9ED6D006A877C /* productInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productInfo.h; sourceTree = "<group>"; };
 		32341CD416E9ED6D006A877C /* productInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productInfo.m; sourceTree = "<group>"; };
+		32341F4E16EDAEA4006A877C /* moreInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moreInfo.h; sourceTree = "<group>"; };
+		32341F4F16EDAEA4006A877C /* moreInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = moreInfo.m; sourceTree = "<group>"; };
+		32341F5216EDB57C006A877C /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		32341F5316EDB57C006A877C /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
+		32341F5416EDB57C006A877C /* BrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowserViewController.xib; sourceTree = "<group>"; };
+		32341F5516EDB57C006A877C /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		32341F5616EDB57C006A877C /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
+		32341F5716EDB57C006A877C /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		32341F5816EDB57C006A877C /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
+		32341F5916EDB57C006A877C /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		32341F5A16EDB57C006A877C /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
+		32341F6216EDD093006A877C /* shareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareInfo.h; sourceTree = "<group>"; };
+		32341F6316EDD093006A877C /* shareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareInfo.m; sourceTree = "<group>"; };
+		32341F6A16EDD414006A877C /* MignonShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MignonShareViewController.h; sourceTree = "<group>"; };
+		32341F6B16EDD414006A877C /* MignonShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonShareViewController.m; sourceTree = "<group>"; };
+		32341F6C16EDD415006A877C /* MignonShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MignonShareViewController.xib; sourceTree = "<group>"; };
+		32341F6F16EDD962006A877C /* title_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				0FF0F39616E8D671002F5A65 /* MSNavigationPaneViewController */,
+				32341F5116EDB57C006A877C /* BrowserViewController */,
 				0FF0F42B16E8F258002F5A65 /* HMSegmentedControl */,
 				0FF0F28F16E8D626002F5A65 /* MBProgress */,
 				0FF0F29916E8D626002F5A65 /* MyInfoPanel */,
@@ -530,6 +560,7 @@
 		0FF0F2B516E8D626002F5A65 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				32341F6F16EDD962006A877C /* title_bg.png */,
 				0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */,
 				0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */,
 				0FF0F3CC16E8E98D002F5A65 /* facebook.png */,
@@ -607,6 +638,10 @@
 				32341CD116E9E09C006A877C /* newsInfo.m */,
 				32341CD316E9ED6D006A877C /* productInfo.h */,
 				32341CD416E9ED6D006A877C /* productInfo.m */,
+				32341F4E16EDAEA4006A877C /* moreInfo.h */,
+				32341F4F16EDAEA4006A877C /* moreInfo.m */,
+				32341F6216EDD093006A877C /* shareInfo.h */,
+				32341F6316EDD093006A877C /* shareInfo.m */,
 			);
 			path = "share component";
 			sourceTree = "<group>";
@@ -658,6 +693,9 @@
 				0FF0F3B316E8D8DC002F5A65 /* MignonFacebookViewController.h */,
 				0FF0F3B416E8D8DC002F5A65 /* MignonFacebookViewController.m */,
 				0FF0F3B516E8D8DC002F5A65 /* MignonFacebookViewController.xib */,
+				32341F6A16EDD414006A877C /* MignonShareViewController.h */,
+				32341F6B16EDD414006A877C /* MignonShareViewController.m */,
+				32341F6C16EDD415006A877C /* MignonShareViewController.xib */,
 				0FF0F3B816E8D8FF002F5A65 /* MignonMoreViewController.h */,
 				0FF0F3B916E8D8FF002F5A65 /* MignonMoreViewController.m */,
 				0FF0F3BA16E8D8FF002F5A65 /* MignonMoreViewController.xib */,
@@ -721,6 +759,22 @@
 				0FF0F42D16E8F258002F5A65 /* HMSegmentedControl.m */,
 			);
 			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
+		32341F5116EDB57C006A877C /* BrowserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				32341F5216EDB57C006A877C /* BrowserViewController.h */,
+				32341F5316EDB57C006A877C /* BrowserViewController.m */,
+				32341F5416EDB57C006A877C /* BrowserViewController.xib */,
+				32341F5516EDB57C006A877C /* left.png */,
+				32341F5616EDB57C006A877C /* left@2x.png */,
+				32341F5716EDB57C006A877C /* MyApplication.h */,
+				32341F5816EDB57C006A877C /* MyApplication.m */,
+				32341F5916EDB57C006A877C /* right.png */,
+				32341F5A16EDB57C006A877C /* right@2x.png */,
+			);
+			path = BrowserViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -858,6 +912,13 @@
 				0FF0F3D916E8E98D002F5A65 /* noPhoto.png in Resources */,
 				0FF0F3DA16E8E98D002F5A65 /* sidebarbg@2x.png in Resources */,
 				0FF0F3DB16E8E98D002F5A65 /* sidebarcell@2x.png in Resources */,
+				32341F5C16EDB57C006A877C /* BrowserViewController.xib in Resources */,
+				32341F5D16EDB57C006A877C /* left.png in Resources */,
+				32341F5E16EDB57C006A877C /* left@2x.png in Resources */,
+				32341F6016EDB57C006A877C /* right.png in Resources */,
+				32341F6116EDB57C006A877C /* right@2x.png in Resources */,
+				32341F6E16EDD415006A877C /* MignonShareViewController.xib in Resources */,
+				32341F7016EDD962006A877C /* title_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +971,11 @@
 				0FF0F42E16E8F258002F5A65 /* HMSegmentedControl.m in Sources */,
 				32341CD216E9E09C006A877C /* newsInfo.m in Sources */,
 				32341CD516E9ED6D006A877C /* productInfo.m in Sources */,
+				32341F5016EDAEA4006A877C /* moreInfo.m in Sources */,
+				32341F5B16EDB57C006A877C /* BrowserViewController.m in Sources */,
+				32341F5F16EDB57C006A877C /* MyApplication.m in Sources */,
+				32341F6416EDD093006A877C /* shareInfo.m in Sources */,
+				32341F6D16EDD415006A877C /* MignonShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

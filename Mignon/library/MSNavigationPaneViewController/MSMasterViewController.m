@@ -30,6 +30,7 @@
 #import "MignonProductViewController.h"
 #import "MignonShopCartViewController.h"
 #import "MignonFacebookViewController.h"
+#import "MignonShareViewController.h"
 #import "MignonMoreViewController.h"
 #import "appConfigRecord.h"
 
@@ -70,7 +71,7 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
             @(MignonViewControllerTypeNews) : MignonNewsViewController.class,
             @(MignonViewControllerTypeProduct) : MignonProductViewController.class,
             @(MignonViewControllerTypeShopCart) : MignonShopCartViewController.class,
-            @(MignonViewControllerTypeFacebook) : MignonFacebookViewController.class,
+            @(MignonViewControllerTypeFacebook) : MignonShareViewController.class,
             @(MignonViewControllerTypeMore) : MignonMoreViewController.class,
         };
         self.paneViewControllerTintColor = @{

@@ -37,6 +37,8 @@
 #define csvDayFile @"csvDayFile"
 #define csvNewsFile @"csvNewsFile"
 #define csvProductFile @"csvProductFile"
+#define csvShareFile @"csvShareFile"
+#define csvMoreFile @"csvMoreFile"
 
 typedef NS_ENUM(NSUInteger, MignonViewControllerType) {
     MignonViewControllerTypeNews,
