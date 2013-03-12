@@ -13,7 +13,7 @@
 #import "BrowserViewController.h"
 #import "customTextViewCell.h"
 
-#define lineWords 20
+#define lineWords 21
 #define lineHeight 22
 #define lineBasicHeight 40
 
@@ -154,7 +154,10 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, 60, 30)];
     shareInfo *info = [self.shareArray objectAtIndex:section];
     [headerButton setTitle:info.shareTitle forState:UIControlStateNormal];
-    [label setText:[NSString stringWithFormat:@"%@", info.shareNo]];
+    if (info.showInTableView)
+        [label setText:[NSString stringWithFormat:@"↓"]];
+    else
+        [label setText:[NSString stringWithFormat:@"→"]];
     
     imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sidebarcell.png"]] autorelease];
 
