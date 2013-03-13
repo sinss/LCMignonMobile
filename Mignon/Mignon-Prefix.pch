@@ -37,6 +37,7 @@
 #define csvDayFile @"csvDayFile"
 #define csvNewsFile @"csvNewsFile"
 #define csvProductFile @"csvProductFile"
+#define csvGallaryFile @"csvGallaryFile"
 #define csvShareFile @"csvShareFile"
 #define csvMoreFile @"csvMoreFile"
 

@@ -132,7 +132,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30;
+    return 40;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -147,11 +147,11 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 30);
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 40);
     UIView *titleView = [[[UIView alloc] initWithFrame:rect] autorelease];
     UIImageView *imageView;
-    UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 0 , 250, 30)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, 60, 30)];
+    UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 0 , 250, 40)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, 60, 40)];
     shareInfo *info = [self.shareArray objectAtIndex:section];
     [headerButton setTitle:info.shareTitle forState:UIControlStateNormal];
     if (info.showInTableView)

@@ -166,6 +166,29 @@
 		32341F6D16EDD415006A877C /* MignonShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32341F6B16EDD414006A877C /* MignonShareViewController.m */; };
 		32341F6E16EDD415006A877C /* MignonShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32341F6C16EDD415006A877C /* MignonShareViewController.xib */; };
 		32341F7016EDD962006A877C /* title_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32341F6F16EDD962006A877C /* title_bg.png */; };
+		3234220816F05A3F006A877C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234220616F05A3F006A877C /* MapViewController.m */; };
+		3234220916F05A3F006A877C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3234220716F05A3F006A877C /* MapViewController.xib */; };
+		3234220C16F05BDB006A877C /* MignonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234220B16F05BDB006A877C /* MignonAnnotation.m */; };
+		3234220E16F05EF9006A877C /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234220D16F05EF9006A877C /* pin.png */; };
+		3234221A16F066DC006A877C /* green_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221016F066DC006A877C /* green_pin.png */; };
+		3234221B16F066DC006A877C /* green_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221116F066DC006A877C /* green_pin@2x.png */; };
+		3234221C16F066DC006A877C /* orange_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221216F066DC006A877C /* orange_pin@2x.png */; };
+		3234221D16F066DC006A877C /* pin_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221316F066DC006A877C /* pin_gray.png */; };
+		3234221E16F066DC006A877C /* pin_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221416F066DC006A877C /* pin_gray@2x.png */; };
+		3234221F16F066DC006A877C /* pin_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221516F066DC006A877C /* pin_orange.png */; };
+		3234222016F066DC006A877C /* purple_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221616F066DC006A877C /* purple_pin.png */; };
+		3234222116F066DC006A877C /* purple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221716F066DC006A877C /* purple_pin@2x.png */; };
+		3234222216F066DC006A877C /* red_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221816F066DC006A877C /* red_pin.png */; };
+		3234222316F066DC006A877C /* red_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3234221916F066DC006A877C /* red_pin@2x.png */; };
+		3234222C16F0895A006A877C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234222616F0895A006A877C /* FMDatabase.m */; };
+		3234222D16F0895A006A877C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234222816F0895A006A877C /* FMDatabaseAdditions.m */; };
+		3234222F16F0895A006A877C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234222B16F0895A006A877C /* FMResultSet.m */; };
+		3234223216F089AE006A877C /* DatabaseFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234223116F089AE006A877C /* DatabaseFunction.m */; };
+		3234223516F08A8E006A877C /* PathAndDirectoryFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234223416F08A8E006A877C /* PathAndDirectoryFunction.m */; };
+		3234223916F08B09006A877C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3234223816F08B08006A877C /* libsqlite3.0.dylib */; };
+		3234223C16F08EC1006A877C /* gallaryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234223B16F08EC1006A877C /* gallaryInfo.m */; };
+		3234224016F093CD006A877C /* MignonGallaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234223E16F093CB006A877C /* MignonGallaryViewController.m */; };
+		3234224116F093CD006A877C /* MignonGallaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3234223F16F093CC006A877C /* MignonGallaryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -382,6 +405,38 @@
 		32341F6B16EDD414006A877C /* MignonShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonShareViewController.m; sourceTree = "<group>"; };
 		32341F6C16EDD415006A877C /* MignonShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MignonShareViewController.xib; sourceTree = "<group>"; };
 		32341F6F16EDD962006A877C /* title_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bg.png; sourceTree = "<group>"; };
+		3234220516F05A3F006A877C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3234220616F05A3F006A877C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		3234220716F05A3F006A877C /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		3234220A16F05BDA006A877C /* MignonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MignonAnnotation.h; sourceTree = "<group>"; };
+		3234220B16F05BDB006A877C /* MignonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonAnnotation.m; sourceTree = "<group>"; };
+		3234220D16F05EF9006A877C /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		3234221016F066DC006A877C /* green_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_pin.png; sourceTree = "<group>"; };
+		3234221116F066DC006A877C /* green_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_pin@2x.png"; sourceTree = "<group>"; };
+		3234221216F066DC006A877C /* orange_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange_pin@2x.png"; sourceTree = "<group>"; };
+		3234221316F066DC006A877C /* pin_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_gray.png; sourceTree = "<group>"; };
+		3234221416F066DC006A877C /* pin_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_gray@2x.png"; sourceTree = "<group>"; };
+		3234221516F066DC006A877C /* pin_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_orange.png; sourceTree = "<group>"; };
+		3234221616F066DC006A877C /* purple_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_pin.png; sourceTree = "<group>"; };
+		3234221716F066DC006A877C /* purple_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purple_pin@2x.png"; sourceTree = "<group>"; };
+		3234221816F066DC006A877C /* red_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_pin.png; sourceTree = "<group>"; };
+		3234221916F066DC006A877C /* red_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_pin@2x.png"; sourceTree = "<group>"; };
+		3234222516F0895A006A877C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3234222616F0895A006A877C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3234222716F0895A006A877C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3234222816F0895A006A877C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3234222A16F0895A006A877C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3234222B16F0895A006A877C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3234223016F089AE006A877C /* DatabaseFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseFunction.h; sourceTree = "<group>"; };
+		3234223116F089AE006A877C /* DatabaseFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseFunction.m; sourceTree = "<group>"; };
+		3234223316F08A8D006A877C /* PathAndDirectoryFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathAndDirectoryFunction.h; sourceTree = "<group>"; };
+		3234223416F08A8E006A877C /* PathAndDirectoryFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathAndDirectoryFunction.m; sourceTree = "<group>"; };
+		3234223816F08B08006A877C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		3234223A16F08EC1006A877C /* gallaryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gallaryInfo.h; sourceTree = "<group>"; };
+		3234223B16F08EC1006A877C /* gallaryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gallaryInfo.m; sourceTree = "<group>"; };
+		3234223D16F093CB006A877C /* MignonGallaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MignonGallaryViewController.h; sourceTree = "<group>"; };
+		3234223E16F093CB006A877C /* MignonGallaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MignonGallaryViewController.m; sourceTree = "<group>"; };
+		3234223F16F093CC006A877C /* MignonGallaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MignonGallaryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +444,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3234223916F08B09006A877C /* libsqlite3.0.dylib in Frameworks */,
+				0FF0F27A16E8D5A5002F5A65 /* MapKit.framework in Frameworks */,
 				0FF0F3C416E8E10A002F5A65 /* OpenGLES.framework in Frameworks */,
 				0FF0F3C216E8E0FB002F5A65 /* QuartzCore.framework in Frameworks */,
 				0FF0F3C016E8E0D9002F5A65 /* libz.dylib in Frameworks */,
@@ -397,7 +454,6 @@
 				0FF0F27816E8D59F002F5A65 /* CFNetwork.framework in Frameworks */,
 				0FF0F27416E8D591002F5A65 /* MobileCoreServices.framework in Frameworks */,
 				0FF0F27C16E8D5B2002F5A65 /* MessageUI.framework in Frameworks */,
-				0FF0F27A16E8D5A5002F5A65 /* MapKit.framework in Frameworks */,
 				0FF0F27616E8D598002F5A65 /* CoreLocation.framework in Frameworks */,
 				0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */,
 				0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */,
@@ -428,6 +484,7 @@
 		0FF0EE9116E8D131002F5A65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3234223816F08B08006A877C /* libsqlite3.0.dylib */,
 				0FF0F3C316E8E109002F5A65 /* OpenGLES.framework */,
 				0FF0F3C116E8E0FB002F5A65 /* QuartzCore.framework */,
 				0FF0F3BF16E8E0D9002F5A65 /* libz.dylib */,
@@ -499,14 +556,15 @@
 		0FF0F28416E8D626002F5A65 /* library */ = {
 			isa = PBXGroup;
 			children = (
-				0F8867E216EE101F0076E8F5 /* StrikeThroughLabel.h */,
-				0F8867E316EE101F0076E8F5 /* StrikeThroughLabel.m */,
 				0FF0F39616E8D671002F5A65 /* MSNavigationPaneViewController */,
 				32341F5116EDB57C006A877C /* BrowserViewController */,
 				0FF0F42B16E8F258002F5A65 /* HMSegmentedControl */,
 				0FF0F28F16E8D626002F5A65 /* MBProgress */,
 				0FF0F29916E8D626002F5A65 /* MyInfoPanel */,
 				0FF0F2A716E8D626002F5A65 /* ODRefreshControl */,
+				3234222416F0895A006A877C /* FMDB */,
+				0F8867E216EE101F0076E8F5 /* StrikeThroughLabel.h */,
+				0F8867E316EE101F0076E8F5 /* StrikeThroughLabel.m */,
 				0FF0F28516E8D626002F5A65 /* AutoScrollLabel.h */,
 				0FF0F28616E8D626002F5A65 /* AutoScrollLabel.m */,
 				0FF0F28716E8D626002F5A65 /* CHCSVParser.h */,
@@ -570,6 +628,7 @@
 		0FF0F2B016E8D626002F5A65 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3234220F16F066DC006A877C /* pin */,
 				0FF0F2B116E8D626002F5A65 /* icon */,
 				0FF0F2B516E8D626002F5A65 /* images */,
 			);
@@ -589,6 +648,7 @@
 		0FF0F2B516E8D626002F5A65 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3234220D16F05EF9006A877C /* pin.png */,
 				32341F6F16EDD962006A877C /* title_bg.png */,
 				0FF0F3CA16E8E98D002F5A65 /* bg_white.jpg */,
 				0FF0F3CB16E8E98D002F5A65 /* bg_white@2x.jpg */,
@@ -671,6 +731,8 @@
 				32341F4F16EDAEA4006A877C /* moreInfo.m */,
 				32341F6216EDD093006A877C /* shareInfo.h */,
 				32341F6316EDD093006A877C /* shareInfo.m */,
+				3234223A16F08EC1006A877C /* gallaryInfo.h */,
+				3234223B16F08EC1006A877C /* gallaryInfo.m */,
 			);
 			path = "share component";
 			sourceTree = "<group>";
@@ -687,6 +749,10 @@
 		0FF0F30016E8D626002F5A65 /* share function */ = {
 			isa = PBXGroup;
 			children = (
+				3234223316F08A8D006A877C /* PathAndDirectoryFunction.h */,
+				3234223416F08A8E006A877C /* PathAndDirectoryFunction.m */,
+				3234223016F089AE006A877C /* DatabaseFunction.h */,
+				3234223116F089AE006A877C /* DatabaseFunction.m */,
 				0F8867EA16EE1AEF0076E8F5 /* MathFunction.h */,
 				0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */,
 				0FF0F30116E8D626002F5A65 /* constants.h */,
@@ -724,6 +790,9 @@
 				0FF0F3B316E8D8DC002F5A65 /* MignonFacebookViewController.h */,
 				0FF0F3B416E8D8DC002F5A65 /* MignonFacebookViewController.m */,
 				0FF0F3B516E8D8DC002F5A65 /* MignonFacebookViewController.xib */,
+				3234223D16F093CB006A877C /* MignonGallaryViewController.h */,
+				3234223E16F093CB006A877C /* MignonGallaryViewController.m */,
+				3234223F16F093CC006A877C /* MignonGallaryViewController.xib */,
 				32341F6A16EDD414006A877C /* MignonShareViewController.h */,
 				32341F6B16EDD414006A877C /* MignonShareViewController.m */,
 				32341F6C16EDD415006A877C /* MignonShareViewController.xib */,
@@ -743,6 +812,11 @@
 				0FF0F30C16E8D626002F5A65 /* MoreContentViewController.h */,
 				0FF0F30D16E8D626002F5A65 /* MoreContentViewController.m */,
 				0FF0F30E16E8D626002F5A65 /* MoreContentViewController.xib */,
+				3234220516F05A3F006A877C /* MapViewController.h */,
+				3234220616F05A3F006A877C /* MapViewController.m */,
+				3234220716F05A3F006A877C /* MapViewController.xib */,
+				3234220A16F05BDA006A877C /* MignonAnnotation.h */,
+				3234220B16F05BDB006A877C /* MignonAnnotation.m */,
 			);
 			path = "custom control";
 			sourceTree = "<group>";
@@ -809,6 +883,36 @@
 				32341F5A16EDB57C006A877C /* right@2x.png */,
 			);
 			path = BrowserViewController;
+			sourceTree = "<group>";
+		};
+		3234220F16F066DC006A877C /* pin */ = {
+			isa = PBXGroup;
+			children = (
+				3234221016F066DC006A877C /* green_pin.png */,
+				3234221116F066DC006A877C /* green_pin@2x.png */,
+				3234221216F066DC006A877C /* orange_pin@2x.png */,
+				3234221316F066DC006A877C /* pin_gray.png */,
+				3234221416F066DC006A877C /* pin_gray@2x.png */,
+				3234221516F066DC006A877C /* pin_orange.png */,
+				3234221616F066DC006A877C /* purple_pin.png */,
+				3234221716F066DC006A877C /* purple_pin@2x.png */,
+				3234221816F066DC006A877C /* red_pin.png */,
+				3234221916F066DC006A877C /* red_pin@2x.png */,
+			);
+			path = pin;
+			sourceTree = "<group>";
+		};
+		3234222416F0895A006A877C /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				3234222516F0895A006A877C /* FMDatabase.h */,
+				3234222616F0895A006A877C /* FMDatabase.m */,
+				3234222716F0895A006A877C /* FMDatabaseAdditions.h */,
+				3234222816F0895A006A877C /* FMDatabaseAdditions.m */,
+				3234222A16F0895A006A877C /* FMResultSet.h */,
+				3234222B16F0895A006A877C /* FMResultSet.m */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -956,6 +1060,19 @@
 				0F8867DC16EE0B890076E8F5 /* MignonProductDetailViewController.xib in Resources */,
 				0F8867E116EE0CFA0076E8F5 /* productCell.xib in Resources */,
 				0F8867E916EE18BD0076E8F5 /* productImageCell.xib in Resources */,
+				3234220916F05A3F006A877C /* MapViewController.xib in Resources */,
+				3234220E16F05EF9006A877C /* pin.png in Resources */,
+				3234221A16F066DC006A877C /* green_pin.png in Resources */,
+				3234221B16F066DC006A877C /* green_pin@2x.png in Resources */,
+				3234221C16F066DC006A877C /* orange_pin@2x.png in Resources */,
+				3234221D16F066DC006A877C /* pin_gray.png in Resources */,
+				3234221E16F066DC006A877C /* pin_gray@2x.png in Resources */,
+				3234221F16F066DC006A877C /* pin_orange.png in Resources */,
+				3234222016F066DC006A877C /* purple_pin.png in Resources */,
+				3234222116F066DC006A877C /* purple_pin@2x.png in Resources */,
+				3234222216F066DC006A877C /* red_pin.png in Resources */,
+				3234222316F066DC006A877C /* red_pin@2x.png in Resources */,
+				3234224116F093CD006A877C /* MignonGallaryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,6 +1135,15 @@
 				0F8867E416EE101F0076E8F5 /* StrikeThroughLabel.m in Sources */,
 				0F8867E716EE18A90076E8F5 /* productImageCell.m in Sources */,
 				0F8867EC16EE1AEF0076E8F5 /* MathFunction.m in Sources */,
+				3234220816F05A3F006A877C /* MapViewController.m in Sources */,
+				3234220C16F05BDB006A877C /* MignonAnnotation.m in Sources */,
+				3234222C16F0895A006A877C /* FMDatabase.m in Sources */,
+				3234222D16F0895A006A877C /* FMDatabaseAdditions.m in Sources */,
+				3234222F16F0895A006A877C /* FMResultSet.m in Sources */,
+				3234223216F089AE006A877C /* DatabaseFunction.m in Sources */,
+				3234223516F08A8E006A877C /* PathAndDirectoryFunction.m in Sources */,
+				3234223C16F08EC1006A877C /* gallaryInfo.m in Sources */,
+				3234224016F093CD006A877C /* MignonGallaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

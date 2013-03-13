@@ -10,6 +10,7 @@
 #import "downloadStoreDelegate.h"
 #import "appConfigRecord.h"
 #import "ODRefreshControl.h"
+#import "BrowserViewController.h"
 
 
 @interface MignonNewsViewController () <downloadStoreListProcess>
@@ -151,6 +152,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSInteger row = [indexPath row];
+    newsInfo *info = [self.newsArray objectAtIndex:row];
+    BrowserViewController *browserView = [[BrowserViewController alloc] initWithUrls:[NSURL URLWithString:info.url]];
+    [self.navigationController pushViewController:browserView animated:YES];
+    [browserView release];
 }
 @end

@@ -63,8 +63,8 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
         self.paneViewControllerTitles = @{
             @(MignonViewControllerTypeNews) : @"促銷活動",
             @(MignonViewControllerTypeProduct) : @"商品列表",
-            @(MignonViewControllerTypeShopCart) : @"購物車",
-            @(MignonViewControllerTypeFacebook) : @"粉絲專頁",
+            @(MignonViewControllerTypeShopCart) : @"我的最愛",
+            @(MignonViewControllerTypeFacebook) : @"精選分享",
             @(MignonViewControllerTypeMore) : @"關於我們",
         };
         self.paneViewControllerClasses = @{

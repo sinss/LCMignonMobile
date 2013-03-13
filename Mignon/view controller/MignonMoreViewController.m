@@ -12,6 +12,7 @@
 #import "ODRefreshControl.h"
 #import "BrowserViewController.h"
 #import "appConfigRecord.h"
+#import "MapViewController.h"
 
 @interface MignonMoreViewController () <downloadStoreListProcess>
 {
@@ -129,7 +130,7 @@
     NSInteger row = [indexPath row];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:moreCellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:moreCellIdentifier] autorelease];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
@@ -146,12 +147,28 @@
     }
     moreInfo *info = [self.moreArray objectAtIndex:row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@",info.itemTitle]];
-    //[cell.detailTextLabel setText:info.itemContent];
+    if ([info.itemType isEqualToString:@"0"])
+    {
+        [cell.detailTextLabel setText:info.itemContent];
+    }
+    else if ([info.itemType isEqualToString:@"1"])
+    {
+        [cell.detailTextLabel setText:@"網址"];
+    }
+    else if ([info.itemType isEqualToString:@"2"])
+    {
+        [cell.detailTextLabel setText:@"連絡我"];
+    }
+    else if ([info.itemType isEqualToString:@"3"])
+    {
+        [cell.detailTextLabel setText:@"地圖"];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     /*
      0:一般文字
      1:網址
@@ -169,8 +186,11 @@
     }
     else if ([info.itemType isEqualToString:@"3"])
     {
-        NSString *googleMapUrl = [NSString stringWithFormat:@"comgooglemaps://?q=&center=%@,%@",[[appConfigRecord appConfigInstance] latitude],[[appConfigRecord appConfigInstance] longitude]];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapUrl]];
+        //NSString *googleMapUrl = [NSString stringWithFormat:@"comgooglemaps://?q=&center=%@,%@",[[appConfigRecord appConfigInstance] latitude],[[appConfigRecord appConfigInstance] longitude]];
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapUrl]];
+        MapViewController *mapView = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+        [self.navigationController pushViewController:mapView animated:YES];
+        [mapView release];
     }
 }
 

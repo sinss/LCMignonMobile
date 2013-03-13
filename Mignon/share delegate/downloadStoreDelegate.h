@@ -19,6 +19,7 @@
 #import "productInfo.h"
 #import "shareInfo.h"
 #import "moreInfo.h"
+#import "gallaryInfo.h"
 
 enum
 {
@@ -26,6 +27,7 @@ enum
     csvLoadtypeDayURL = 0,
     csvLoadtypeNews = 1,
     csvLoadtypeProduct = 2,
+    csvLoadTypeGallary = 3,
     csvLoadTypeShare = 4,
     csvLoadTypeMore = 5,
 };

@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) NSMutableArray *newsArray;
 @property (nonatomic, retain) NSMutableArray *productArray;
+@property (nonatomic, retain) NSMutableArray *gallaryArray;
 @property (nonatomic, retain) NSMutableArray *shareArray;
 @property (nonatomic, retain) NSMutableArray *moreArray;
 
@@ -53,6 +54,10 @@
         {
             _shareArray = [[NSMutableArray alloc] initWithCapacity:0];
         }
+        if (_gallaryArray == nil)
+        {
+            _gallaryArray = [[NSMutableArray alloc] initWithCapacity:0];
+        }
     }
     return self;
 }
@@ -65,6 +70,7 @@
     [_productArray release], _productArray = nil;
     [_moreArray release], _moreArray = nil;
     [_shareArray release], _shareArray = nil;
+    [_gallaryArray release], _gallaryArray = nil;
     delegate = nil;
     [super dealloc];
 }
@@ -95,6 +101,10 @@
     else if (csvLoadtype == csvLoadtypeProduct)
     {
         fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvProductFile], [globalFunction getTodayString]];
+    }
+    else if (csvLoadtype == csvLoadTypeGallary)
+    {
+        fileName = [NSString stringWithFormat:@"%@_%@", [globalFunction getCacheDirectoryFileNameWithName:csvGallaryFile], [globalFunction getTodayString]];
     }
     else if (csvLoadtype == csvLoadTypeShare)
     {
@@ -176,6 +186,16 @@
         }];
         [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
     }
+    else if (csvLoadtype == csvLoadTypeGallary)
+    {
+        /* 排序 */
+        NSArray *tmpArray = [self.gallaryArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(gallaryInfo*)a seq];
+            NSNumber *second = [(gallaryInfo*)b seq];
+            return [first compare:second];
+        }];
+        [delegate downloadDelegate:self didFinishDownloadWithData:tmpArray];
+    }
     else if (csvLoadtype == csvLoadTypeShare)
     {
         /* 排序 */
@@ -244,6 +264,9 @@
             break;
         case csvLoadtypeProduct:
             [self.productArray removeAllObjects];
+            break;
+        case csvLoadTypeGallary:
+            [self.gallaryArray removeAllObjects];
             break;
         case csvLoadTypeShare:
             [self.shareArray removeAllObjects];
@@ -319,6 +342,25 @@
                         info.comment = [currentRow objectAtIndex:11];
                         
                         [self.productArray addObject:info];
+                        [info release];
+                    }
+                }
+                break;
+            case csvLoadTypeGallary:
+                if ([currentRow count] == 6)
+                {
+                    if ([@"Y" compare:[currentRow objectAtIndex:1]] == 0)
+                    {
+                        gallaryInfo *info = [gallaryInfo new];
+                        info.seq = [NSNumber numberWithInteger:[[currentRow objectAtIndex:0] integerValue]];
+                        info.showInd = [currentRow objectAtIndex:1];
+                        info.imageUrl = [currentRow objectAtIndex:2];
+                        info.title = [currentRow objectAtIndex:3];
+                        NSString *titles = [currentRow objectAtIndex:4];
+                        NSString *contents = [currentRow objectAtIndex:5];
+                        info.itemTitles = [titles componentsSeparatedByString:@","];
+                        info.itemContents = [contents componentsSeparatedByString:@","];
+                        [self.gallaryArray addObject:info];
                         [info release];
                     }
                 }
