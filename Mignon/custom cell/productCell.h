@@ -8,18 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-@class StrikeThroughLabel;
+@class productCell;
+@protocol productCellAction <NSObject>
+
+- (void)productCell:(productCell*)cell didPressWithProductTag:(NSInteger)tag;
+
+@end
+
 @interface productCell : UITableViewCell
 {
-    StrikeThroughLabel *priceLabel;
-    UILabel *categoryLabel;
-    UILabel *titleLabel;
+    id <productCellAction> delegate;
+    UILabel *categoryLabel1;
+    UILabel *titleLabel1;
+    UILabel *categoryLabel2;
+    UILabel *titleLabel2;
 }
 
-@property (nonatomic, retain) IBOutlet StrikeThroughLabel *priceLabel;
-@property (nonatomic, retain) IBOutlet UILabel *categoryLabel;
-@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (assign) id <productCellAction> delegate;
+@property (nonatomic, retain) IBOutlet UILabel *categoryLabel1;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel1;
+@property (nonatomic, retain) IBOutlet UILabel *categoryLabel2;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel2;
 
-- (void)setPriceDeleteLineEnable:(BOOL)isOn andText:(NSString*)text;
+- (void)setGroup2Enable:(BOOL)value;
+- (void)downloadImageButton1WithUrl:(NSString*)imageUrl andName:(NSString*)imageName;
+- (void)downloadImageButton2WithUrl:(NSString*)imageUrl andName:(NSString*)imageName;
 
 @end

@@ -15,6 +15,8 @@
 		0F8867E716EE18A90076E8F5 /* productImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867E616EE18A90076E8F5 /* productImageCell.m */; };
 		0F8867E916EE18BD0076E8F5 /* productImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8867E816EE18BD0076E8F5 /* productImageCell.xib */; };
 		0F8867EC16EE1AEF0076E8F5 /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */; };
+		0F8867F116F0BCFE0076E8F5 /* webserviceDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867EE16F0BCFE0076E8F5 /* webserviceDownloader.m */; };
+		0F8867F216F0BCFE0076E8F5 /* webserviceRequestLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867F016F0BCFE0076E8F5 /* webserviceRequestLoader.m */; };
 		0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9216E8D131002F5A65 /* UIKit.framework */; };
 		0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9416E8D131002F5A65 /* Foundation.framework */; };
 		0FF0EE9716E8D131002F5A65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */; };
@@ -205,6 +207,10 @@
 		0F8867E816EE18BD0076E8F5 /* productImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = productImageCell.xib; sourceTree = "<group>"; };
 		0F8867EA16EE1AEF0076E8F5 /* MathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathFunction.h; sourceTree = "<group>"; };
 		0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathFunction.m; sourceTree = "<group>"; };
+		0F8867ED16F0BCFE0076E8F5 /* webserviceDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webserviceDownloader.h; sourceTree = "<group>"; };
+		0F8867EE16F0BCFE0076E8F5 /* webserviceDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webserviceDownloader.m; sourceTree = "<group>"; };
+		0F8867EF16F0BCFE0076E8F5 /* webserviceRequestLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webserviceRequestLoader.h; sourceTree = "<group>"; };
+		0F8867F016F0BCFE0076E8F5 /* webserviceRequestLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webserviceRequestLoader.m; sourceTree = "<group>"; };
 		0FF0EE8F16E8D131002F5A65 /* Mignon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mignon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0EE9216E8D131002F5A65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FF0EE9416E8D131002F5A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -740,6 +746,10 @@
 		0FF0F2FD16E8D626002F5A65 /* share delegate */ = {
 			isa = PBXGroup;
 			children = (
+				0F8867ED16F0BCFE0076E8F5 /* webserviceDownloader.h */,
+				0F8867EE16F0BCFE0076E8F5 /* webserviceDownloader.m */,
+				0F8867EF16F0BCFE0076E8F5 /* webserviceRequestLoader.h */,
+				0F8867F016F0BCFE0076E8F5 /* webserviceRequestLoader.m */,
 				0FF0F2FE16E8D626002F5A65 /* downloadStoreDelegate.h */,
 				0FF0F2FF16E8D626002F5A65 /* downloadStoreDelegate.m */,
 			);
@@ -1144,6 +1154,8 @@
 				3234223516F08A8E006A877C /* PathAndDirectoryFunction.m in Sources */,
 				3234223C16F08EC1006A877C /* gallaryInfo.m in Sources */,
 				3234224016F093CD006A877C /* MignonGallaryViewController.m in Sources */,
+				0F8867F116F0BCFE0076E8F5 /* webserviceDownloader.m in Sources */,
+				0F8867F216F0BCFE0076E8F5 /* webserviceRequestLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

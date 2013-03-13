@@ -29,7 +29,7 @@
 #define evenCellBackgroundColor [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.5]
 
 #define loadingImageName @"loading.png"
-#define noImageName @"noImage.jpeg"
+#define noImageName @"popupWindowBack.png"
 #define tableView_bg @"background_367.png"
 #define sylinCoin_bg @"sylinCoin_bg.png"
 

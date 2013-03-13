@@ -14,7 +14,7 @@
 #import "productCell.h"
 #import "MignonProductDetailViewController.h"
 
-@interface MignonProductViewController () <downloadStoreListProcess>
+@interface MignonProductViewController () <downloadStoreListProcess, productCellAction>
 {
     downloadStoreDelegate *downloadNews;
 }
@@ -125,7 +125,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.productArray count];
+    if ([self.productArray count] % 2 == 1)
+        return [self.productArray count] / 2 + 1;
+    return [self.productArray count] / 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,26 +160,49 @@
             [cell.textLabel setBackgroundColor:[UIColor clearColor]];
             [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
         }
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setDelegate:self];
     }
-    productInfo *info = [self.productArray objectAtIndex:row];
-    [cell.categoryLabel setText:info.category];
-    [cell.titleLabel setText:info.itemName];
-    if ([info.discound doubleValue] > 0)
+    NSInteger index = row * 2;
+    productInfo *info = [self.productArray objectAtIndex:index];
+    // 1
+    [cell.categoryLabel1 setText:info.category];
+    [cell.titleLabel1 setText:info.itemName];
+    if ([info.imageArray count] > 0)
     {
-        [cell setPriceDeleteLineEnable:YES andText:[[MathFunction mathFunctionInstance] displayDefaultNumberWithNumber:info.price]];
+        [cell downloadImageButton1WithUrl:[info.imageArray objectAtIndex:0] andName:[NSString stringWithFormat:@"product_%@",info.showNo]];
     }
-    else
+    productInfo *info2 = [self.productArray objectAtIndex:(index + 1)];
+    // 2
+    [cell.categoryLabel2 setText:info2.category];
+    [cell.titleLabel2 setText:info2.itemName];
+    if ([info2.imageArray count] > 0)
     {
-        [cell setPriceDeleteLineEnable:NO andText:[[MathFunction mathFunctionInstance] displayDefaultNumberWithNumber:info.price]];
+        [cell downloadImageButton2WithUrl:[info2.imageArray objectAtIndex:0] andName:[NSString stringWithFormat:@"product_%@",info2.showNo]];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
     MignonProductDetailViewController *productDetailView = [[MignonProductDetailViewController alloc] initWithNibName:@"MignonProductDetailViewController" bundle:nil];
     productInfo *info = [self.productArray objectAtIndex:[indexPath row]];
+    [productDetailView setCurrentProduct:info];
+    [self.navigationController pushViewController:productDetailView animated:YES];
+    [productDetailView release];
+     */
+}
+
+#pragma mark - productCellAction
+- (void)productCell:(productCell *)cell didPressWithProductTag:(NSInteger)tag
+{
+    NSIndexPath *indexPath = [aTableView indexPathForCell:cell];
+    NSInteger row = [indexPath row];
+    NSInteger index = row * 2 + tag;
+    productInfo *info = [self.productArray objectAtIndex:index];
+    MignonProductDetailViewController *productDetailView = [[MignonProductDetailViewController alloc] initWithNibName:@"MignonProductDetailViewController" bundle:nil];
     [productDetailView setCurrentProduct:info];
     [self.navigationController pushViewController:productDetailView animated:YES];
     [productDetailView release];

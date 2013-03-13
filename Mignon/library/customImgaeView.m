@@ -163,8 +163,8 @@
 
 - (void)buttonPress:(UIButton *)sender
 {
-    //[delegate didPressButtonWithTag:sender.tag];
-    [delegate didPressButtonWithImage:[aImageButton.imageView image]];
+    [delegate didPressButtonWithTag:sender.tag];
+    //[delegate didPressButtonWithImage:[aImageButton.imageView image]];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
