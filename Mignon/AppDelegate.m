@@ -32,7 +32,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
     
     [[UINavigationBar appearance] setTintColor:navigationBarColor];
     //[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:navigationBarColor];
@@ -52,6 +52,8 @@
     [[UIToolbar appearance] setTintColor:navigationBarColor];
     launchView = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
     [self.window addSubview:launchView.view];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

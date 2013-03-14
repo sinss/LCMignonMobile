@@ -152,6 +152,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger row = [indexPath row];
     newsInfo *info = [self.newsArray objectAtIndex:row];
     BrowserViewController *browserView = [[BrowserViewController alloc] initWithUrls:[NSURL URLWithString:info.url]];

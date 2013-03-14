@@ -201,6 +201,7 @@
             break;
         }
         [cell setAccessoryType:UITableViewCellAccessoryNone];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     shareInfo *info = [self.shareArray objectAtIndex:sec];
     double lineNo = [info.shareContent length] / lineWords;
