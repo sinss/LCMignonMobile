@@ -10,6 +10,7 @@
 #import "MSNavigationPaneViewController.h"
 #import "MSMasterViewController.h"
 #import "BrowserViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -33,8 +34,30 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
+    // ****************************************************************************
+    // Uncomment and fill in with your Parse credentials:
+    [Parse setApplicationId:@"dpRKpjERJB3dwo131nfbIRCNSZ8cMZEyN4lt6n3z" clientKey:@"0uQul5J7Ak4fraZUEHRS9abYtRBeg0NnlnY3pq4J"];
+    //
+    // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
+    // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
+    // [PFFacebookUtils initializeFacebook];
+    // ****************************************************************************
+    
+    [PFUser enableAutomaticUser];
+    
+    PFACL *defaultACL = [PFACL ACL];
+    
+    // If you would like all objects to be private by default, remove this line.
+    [defaultACL setPublicReadAccess:YES];
+    
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
     [[UINavigationBar appearance] setTintColor:navigationBarColor];
+    
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
+    
     //[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:navigationBarColor];
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -52,9 +75,32 @@
     [[UIToolbar appearance] setTintColor:navigationBarColor];
     launchView = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
     [self.window addSubview:launchView.view];
-    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken
+{
+    [PFPush storeDeviceToken:newDeviceToken];
+    [PFPush subscribeToChannelInBackground:@"" target:self selector:@selector(subscribeFinished:error:)];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    if (error.code == 3010)
+    {
+        NSLog(@"Push notifications are not supported in the iOS Simulator.");
+    }
+    else
+    {
+        // show some alert or otherwise handle the failure to register.
+        NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+	}
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -271,6 +317,18 @@
             [[appConfigRecord appConfigInstance] setCurrentAddress:currentAddress];
         }
 	}
+}
+
+#pragma mark - ()
+
+- (void)subscribeFinished:(NSNumber *)result error:(NSError *)error
+{
+    if ([result boolValue])
+    {
+        NSLog(@"ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
+    } else {
+        NSLog(@"ParseStarterProject failed to subscribe to push notifications on the broadcast channel.");
+    }
 }
 
 @end
