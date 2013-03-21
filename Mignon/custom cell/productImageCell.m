@@ -46,6 +46,8 @@
         [adImageView release];
     }
     [aPageControl setNumberOfPages:[urlArray count]];
+    NSString *pageNumberString = [NSString stringWithFormat:@"%i/%i", 1, aPageControl.numberOfPages];
+    [pageNumberLagel setText:pageNumberString];
 }
 
 - (void)didPressButtonWithTag:(NSInteger)imageTag
@@ -75,6 +77,8 @@
     int page = floor((aScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     aPageControl.currentPage = page;
     
+    NSString *pageNumberString = [NSString stringWithFormat:@"%i/%i", page + 1, aPageControl.numberOfPages];
+    [pageNumberLagel setText:pageNumberString];
     
     // A possible optimization would be to unload the views+controllers which are no longer visible
 }

@@ -17,6 +17,8 @@
 		0F8867EC16EE1AEF0076E8F5 /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867EB16EE1AEF0076E8F5 /* MathFunction.m */; };
 		0F8867F116F0BCFE0076E8F5 /* webserviceDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867EE16F0BCFE0076E8F5 /* webserviceDownloader.m */; };
 		0F8867F216F0BCFE0076E8F5 /* webserviceRequestLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8867F016F0BCFE0076E8F5 /* webserviceRequestLoader.m */; };
+		0FC4E13916FB63BE0008E7A9 /* productIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC4E13816FB63BE0008E7A9 /* productIntroductionCell.m */; };
+		0FC4E13B16FB63DB0008E7A9 /* productIntroductionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC4E13A16FB63DB0008E7A9 /* productIntroductionCell.xib */; };
 		0FF0EE9316E8D131002F5A65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9216E8D131002F5A65 /* UIKit.framework */; };
 		0FF0EE9516E8D131002F5A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9416E8D131002F5A65 /* Foundation.framework */; };
 		0FF0EE9716E8D131002F5A65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF0EE9616E8D131002F5A65 /* CoreGraphics.framework */; };
@@ -218,6 +220,9 @@
 		0F8867EE16F0BCFE0076E8F5 /* webserviceDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webserviceDownloader.m; sourceTree = "<group>"; };
 		0F8867EF16F0BCFE0076E8F5 /* webserviceRequestLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webserviceRequestLoader.h; sourceTree = "<group>"; };
 		0F8867F016F0BCFE0076E8F5 /* webserviceRequestLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webserviceRequestLoader.m; sourceTree = "<group>"; };
+		0FC4E13716FB63BE0008E7A9 /* productIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productIntroductionCell.h; sourceTree = "<group>"; };
+		0FC4E13816FB63BE0008E7A9 /* productIntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productIntroductionCell.m; sourceTree = "<group>"; };
+		0FC4E13A16FB63DB0008E7A9 /* productIntroductionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = productIntroductionCell.xib; sourceTree = "<group>"; };
 		0FF0EE8F16E8D131002F5A65 /* Mignon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mignon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0EE9216E8D131002F5A65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FF0EE9416E8D131002F5A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -583,6 +588,9 @@
 				0F8867E516EE18A90076E8F5 /* productImageCell.h */,
 				0F8867E616EE18A90076E8F5 /* productImageCell.m */,
 				0F8867E816EE18BD0076E8F5 /* productImageCell.xib */,
+				0FC4E13716FB63BE0008E7A9 /* productIntroductionCell.h */,
+				0FC4E13816FB63BE0008E7A9 /* productIntroductionCell.m */,
+				0FC4E13A16FB63DB0008E7A9 /* productIntroductionCell.xib */,
 			);
 			path = "custom cell";
 			sourceTree = "<group>";
@@ -1111,6 +1119,7 @@
 				3234222216F066DC006A877C /* red_pin.png in Resources */,
 				3234222316F066DC006A877C /* red_pin@2x.png in Resources */,
 				3234224116F093CD006A877C /* MignonGallaryViewController.xib in Resources */,
+				0FC4E13B16FB63DB0008E7A9 /* productIntroductionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1184,6 +1193,7 @@
 				3234224016F093CD006A877C /* MignonGallaryViewController.m in Sources */,
 				0F8867F116F0BCFE0076E8F5 /* webserviceDownloader.m in Sources */,
 				0F8867F216F0BCFE0076E8F5 /* webserviceRequestLoader.m in Sources */,
+				0FC4E13916FB63BE0008E7A9 /* productIntroductionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

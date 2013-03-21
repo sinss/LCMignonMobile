@@ -19,6 +19,7 @@
 {
     IBOutlet UIScrollView *aScrollView;
     IBOutlet UIPageControl *aPageControl;
+    IBOutlet UILabel *pageNumberLagel;
     BOOL pageControlUsed;
 }
 

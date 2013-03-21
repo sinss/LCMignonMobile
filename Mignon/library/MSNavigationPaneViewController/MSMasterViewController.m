@@ -68,8 +68,8 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType) {
             @(MignonViewControllerTypeMore) : @"關於我們",
         };
         self.paneViewControllerClasses = @{
-            @(MignonViewControllerTypeNews) : MignonNewsViewController.class,
-            @(MignonViewControllerTypeProduct) : MignonProductViewController.class,
+            @(MignonViewControllerTypeNews) : MignonProductViewController.class,
+            @(MignonViewControllerTypeProduct) : MignonNewsViewController.class,
             @(MignonViewControllerTypeShopCart) : MignonShopCartViewController.class,
             @(MignonViewControllerTypeFacebook) : MignonShareViewController.class,
             @(MignonViewControllerTypeMore) : MignonMoreViewController.class,
